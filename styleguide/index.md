@@ -5,7 +5,6 @@ title: Style&nbsp;Guide
 
 This page demonstrates the various visual styles that comprise the design of this site.<!--  At the time of writing ({{ site.time | pretty }}), heading & body copy is set in Hoefler Text A, headlines are set in Requiem Display A, and captions are set in Whitney[^1]. -->
 
-{% image alignleft /assets/2014/05/1.jpg "This is a left aligned image." %}
 
 ## Heading Level Two
 
@@ -26,7 +25,6 @@ Third level headings are most often used to denote names rather than sections, s
 	1. This is a second-level numbered list item
 3. Numbered lists, like bulleted lists, are not used particularly often on this site.
 
-{% image imgbleed /assets/2014/06/3.jpg "This is an example image caption, set in Franklin Gothic. The image is of a desk in the Herb Lubalin Study Center of Design and Typography." %}
 
 Images may take one of two forms; aligned (left), or centered (relative to the text column). Captions are encouraged, but not required.
 
