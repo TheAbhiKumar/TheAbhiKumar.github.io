@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html{% if page.class %} class="{{ page.class }}"{% endif %}>
+<head>
+
+    <title>{{ page.title }} | Abhishek Kumar</title>
+    <!-- <title>{{ page.title }} | {{ site.name }}</title> -->
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel='stylesheet' type='text/css' href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
+
+    <!-- HTML Meta Tags -->
+    <meta charset="utf-8">
+    <!-- <meta name="description" content="" /> -->
+    <meta name="author" content="Abhishek Kumar" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="{{ page.title }} | Abhishek Kumar" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url | replace:'/index.html','/' }}" />
+    <!-- <meta property="og:image" content="">
+    <meta property="og:image:type" content="">
+    <meta property="og:image:width" content="">
+    <meta property="og:image:height" content="">
+    <meta property="og:description" content="" /> -->
+    
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'/index.html','/' }}" />
+
+</head>
+<body>
+  <header class="wrap site__header" role="banner">
+    <a class="site__title o--b o--p" href="/" title="{{ site.name }} • Home">
+      <!-- <span class="delta o--b"></span> -->
+      <span class="o--b">{{ site.name }}</span>
+    </a>
+    {% include nav.html %}
+  </header>

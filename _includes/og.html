@@ -1,0 +1,12 @@
+{% capture header %}
+{% if page.title %}
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ page.title }} | Abhishek Kumar" />
+{% else %}
+    <meta property="og:type" content="website" />   
+{% endif %}
+{% include meta.html property="og:site_name" content=site.title %}
+{% include meta.html property="og:image" content=page.thumbnail %}
+{% capture page_url %}{{ site.url }}{{ page.url | replace:'/index.html','/' }}{% endcapture %}
+{% include meta.html property="og:url" content=page_url %}
+{% endcapture %}{{ header }}

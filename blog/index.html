@@ -1,13 +1,22 @@
 ---
-layout: default
-title: Your New Jekyll Site
+layout: page
+title: Blog
+in-nav: true
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
+<p class="gamma promo"><mark>This site is still under development.</mark></p>
+
+<ul class="unl posts__list">
+{% for post in site.posts %}
+    {% if site.category == blog %}
+        {% if post.hidden != true %}
+      <li class="o--p">
+        <a class="a--plain" href="{{ post.url }}">
+          <span class="o--b beta o--z">{{ post.title }}</span>
+          <span class="meta delta o--b">{{ post.date | pretty }}</span>
+        </a>
+      </li>
+      {% endif %}
+    {% endif %}
+{% endfor %}
+</ul>
