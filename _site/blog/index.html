@@ -1,50 +1,67 @@
 <!DOCTYPE html>
-<html>
-<head>
-
+<html class="night-mode" >
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Blog | Abhishek Kumar</title>
-    <!-- <title>Blog | Abhishek Kumar</title> -->
-
+    
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel='stylesheet' type='text/css' href="/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="/css/syntax.css" />
 
-    <!-- HTML Meta Tags -->
-    <meta charset="utf-8">
-    <!-- <meta name="description" content="" /> -->
     <meta name="author" content="Abhishek Kumar" />
+    <meta name="keywords" content="c++, c, machine learning, opencl, programming"/>
+    <!-- <meta name="description" content="Personal website of Abhishek Kumar: Articles about C++"/> -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#444444">
+    <link rel="icon" type="image/png" href="/icon.png" sizes="192x192">
 
-    <!-- Open Graph Metadata -->
-    <meta property="og:title" content="Blog | Abhishek Kumar" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://abkumar.me/blog/" />
-    <!-- <meta property="og:image" content="">
-    <meta property="og:image:type" content="">
-    <meta property="og:image:width" content="">
-    <meta property="og:image:height" content="">
-    <meta property="og:description" content="" /> -->
-    
-    <link rel="canonical" href="https://abkumar.me/blog/" />
-
-</head>
+    <link rel="canonical" href="http://abkumar.me/blog/" />
+  </head>
 <body>
   <header class="wrap site__header" role="banner">
+  <span class="namepad">
     <a class="site__title o--b o--p" href="/" title="Abhishek Kumar • Home">
       <!-- <span class="delta o--b"></span> -->
-      <span class="o--b">Abhishek Kumar</span>
+      <span class="o--b o--bl name">Abhishek Kumar</span>
     </a>
+    <span class="o--b o--br o--p">
+    <a class="a--plain" href="https://github.com/TheAbhiKumar"><img class="github" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iIzQ0NCIgZD0iTTMuMTYgOS41ODJxLS4wNjIuMDctLjE1Ni0uMDIzLS4xMDItLjA5LS4wMy0uMTUuMDYtLjA3LjE1NS4wMi4wOS4wODUuMDMuMTV6bS0uMzI4LS40NzZxLjA3LjA5NCAwIC4xNDhRMi43NyA5LjMgMi43IDkuMnQwLS4xNDJxLjA3LS4wNTUuMTMyLjA0N3ptLS40NzctLjQ3cS0uMDQuMDU2LS4xMDIuMDE3LS4wNzgtLjA0LS4wNTUtLjA5NC4wMjMtLjA0LjEwMi0uMDIuMDc4LjA0LjA1NS4wOTJ6bS4yNDMuMjY3cS0uMDQ3LjA1NS0uMTI1LS4wMjMtLjA3LS4wODYtLjAxNi0uMTI1LjA0Ny0uMDQ3LjEyNS4wMjMuMDcuMDg2LjAxNi4xMjV6bTEuMDA3Ljg3NXEtLjAzLjA5NC0uMTQ4LjA0Ny0uMTMzLS4wMy0uMTAyLS4xMTd0LjE0OC0uMDU1cS4xMjUuMDQuMTAyLjEyNXptLjQ5My4wNHEwIC4wODUtLjEyNS4wODUtLjEzMy4wMTYtLjEzMy0uMDg2IDAtLjA4Ni4xMjUtLjA4Ni4xMzMtLjAxLjEzMy4wOXptLjQ1My0uMDhxLjAyLjA4LS4xMDMuMTF0LS4xNC0uMDYzLjEwOC0uMTE3cS4xMjYtLjAxNi4xNC4wN3ptNy41MzctNy40Njh2Ny41cTAgLjkzLS42NiAxLjU5dC0xLjU5LjY2aC0xLjc1cS0uMTI1IDAtLjE5LS4wMDh0LS4xNTMtLjA0LS4xMjUtLjExMi0uMDQtLjIxNVY5Ljc3OHEwLS43NTgtLjQwNi0xLjExLjQ0My0uMDQ2LjgtLjE0dC43MzMtLjMwNS42MzMtLjUyLjQxMy0uODIuMTYtMS4xNzZxMC0uOTQ1LS42MTYtMS42MS4yOS0uNzEtLjA2My0xLjU5My0uMjE2LS4wNy0uNjMuMDg2dC0uNzIuMzQ0bC0uMjk2LjE4N3EtLjcyNy0uMi0xLjUtLjJ0LTEuNS4yMDZxLS4xMjUtLjA4NS0uMzMyLS4yMXQtLjY1LS4zLS42NzMtLjEwNnEtLjM0NS44ODItLjA1NiAxLjU5My0uNjE2LjY2NS0uNjE2IDEuNjEgMCAuNjY0LjE2IDEuMTd0LjQxLjgyLjYzLjUyNS43MzUuMzA1LjguMTRxLS4zMS4yOC0uMzgyLjgwNS0uMTYzLjA3OC0uMzUuMTE3dC0uNDQ2LjA0LS41MS0uMTctLjQzNS0uNDg3cS0uMTUtLjI1LS4zOC0uNDA2dC0uMzktLjE5bC0uMTU2LS4wMjJxLS4xNjQgMC0uMjI3LjAzNHQtLjA0LjA5LjA3LjExLjEwMi4wOTNsLjA1My4wNHEuMTczLjA3Ny4zNC4yOTZ0LjI0Ny40bC4wOC4xOHEuMS4yOTguMzQzLjQ4dC41MjIuMjM1LjU0My4wNTUuNDM0LS4wMjdsLjE4LS4wM3EwIC4yOTcuMDA0LjgwNXQuMDA0LjUzcTAgLjE3NC0uMDg2LjI2NHQtLjE3LjEwMi0uMjYuMDEySDIuMzNxLS45MyAwLTEuNTktLjY2dC0uNjYtMS41OXYtNy41cTAtLjkzLjY2LTEuNTl0MS41OS0uNjZoNy41cS45MyAwIDEuNTkuNjZ0LjY2IDEuNTl6Ii8+PC9zdmc+"/></a>
+    </span>
+    </span>
+    <div style="clear: both;"></div>
     <nav class="site__nav" role="navigation">
   <ul class="nav">
     
-    <li><a class="active" href="/blog/">Blog</a></li>
-    <li><a  href="/hackathons/">Hackathons</a></li>
-    <li><a  href="/projects/">Projects</a></li>
     
-    <li class="f--r meta spit--v"><span class="js--toggle-lights">&#9788;</span></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li>
+          <a class="active" href="/blog/">Blog</a>
+        </li>
+      
+    
+      
+        <li>
+          <a  href="/archive/">Archive</a>
+        </li>
+      
+    
+      
+        <li>
+          <a  href="/resources/">Resources</a>
+        </li>
+      
+    
   </ul>
 </nav>
-
   </header>
 
 
@@ -54,16 +71,25 @@
                 <h1 class="page__title">Blog</h1>
             </header>
             <div class=" page__content grid__col grid__col--4-of-6">
-                <p class="gamma promo"><mark>This site is still under development.</mark></p>
-
-<ul class="unl posts__list">
+                <ul class="unl posts__list">
 
     
         
       <li class="o--p">
-        <a class="a--plain" href="/blog/2014/09/24/lorem-ipsum-3/">
+        <a class="a--plain" href="/blog/2015/11/understanding-lstm-neural-networks-in-c++/">
+          <span class="o--b beta o--z">Understanding LSTM Neural Networks in C++</span>
+          <span class="meta delta o--b">2015 November 17</span>
+        </a>
+      </li>
+      
+    
+
+    
+        
+      <li class="o--p">
+        <a class="a--plain" href="/blog/2014/09/lorem-ipsum-3/">
           <span class="o--b beta o--z">Lorem Ipsum 3</span>
-          <span class="meta delta o--b">2014-09-24 00:00:00 -0700</span>
+          <span class="meta delta o--b">2014 September 24</span>
         </a>
       </li>
       
@@ -72,9 +98,9 @@
     
         
       <li class="o--p">
-        <a class="a--plain" href="/blog/2014/09/23/lorem-ipsum-2/">
+        <a class="a--plain" href="/blog/2014/09/lorem-ipsum-2/">
           <span class="o--b beta o--z">Lorem Ipsum 2</span>
-          <span class="meta delta o--b">2014-09-23 00:00:00 -0700</span>
+          <span class="meta delta o--b">2014 September 23</span>
         </a>
       </li>
       
@@ -82,28 +108,6 @@
 
     
         
-    
-
-    
-        
-      <li class="o--p">
-        <a class="a--plain" href="/projects/2014/01/01/ircbot/">
-          <span class="o--b beta o--z">Irc Bot</span>
-          <span class="meta delta o--b">2014-01-01 00:00:00 -0800</span>
-        </a>
-      </li>
-      
-    
-
-    
-        
-      <li class="o--p">
-        <a class="a--plain" href="/projects/2013/02/01/redditbot/">
-          <span class="o--b beta o--z">Reddit Bot</span>
-          <span class="meta delta o--b">2013-02-01 00:00:00 -0800</span>
-        </a>
-      </li>
-      
     
 
 </ul>
@@ -112,29 +116,6 @@
         </article>
     </main>
 
-    <footer class="wrap site__footer" role="contentinfo">
-        <div class="grid">
-<!--             <section class="small grid__col grid__col--3-of-6 p-author vcard">
-                <h4>About</h4>
-                    <p>My name is <span class="fn">/*/</span>. I’m a student at /*/ studying /*/.</p>
-            </section> -->
-
-      <section class="small grid__col grid__col--3-of-6">
-        <h4>Links</h4>
-        <!-- <ul> -->
-            <!-- <li>View the <a href="/archive/">archives</a></li> -->
-            <!-- <li>View the <a href="/styleguide/">styleguide</a></li> -->
-            <!-- <li>twitter.com/<a href=""></a></li> -->
-            <li>github.com/<a href="portfolio.html">TheAbhiKumar</a></li>
-            <!-- <li>linkedin.com/in/<a href=""></a></li> -->
-        <!-- </ul> -->
-      </section>
-        </div>
-    </footer>
-  
-    <div class="footer__copyright wrap small caps isle--v">
-        <p>&copy; 2014 Abhishek Kumar, unless otherwise noted.</p>
-    </div>
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -150,29 +131,26 @@
   document.createElement( "picture" );
 </script>
 
-<script src="/js/picturefill.min.js"></script>
-
-<script>
-// Toggle night theme
-var d = document.documentElement,
-    t = document.querySelectorAll(".js--toggle-lights")[0],
-    m = localStorage.getItem("nightmode");
-
-if(m == "true") {
-  d.classList.add("night-mode");
-}
-
-t.addEventListener("click", function(){
-  if(d.classList.contains("night-mode")) {
-    d.classList.remove("night-mode");
-    localStorage.setItem("nightmode", "false");
-  } else {
-    d.classList.add("night-mode");
-    localStorage.setItem("nightmode", "true");
-  }
-});
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\(', '\)'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
 </script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+-->
 
-    
+<!-- <script src="/js/picturefill.min.js"></script> -->
+
 </body>
 </html>

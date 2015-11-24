@@ -1,6 +1,6 @@
 ---
-layout: post
 title: Lorem Ipsum 1
+layout: post
 category: blog
 hidden: true
 ---

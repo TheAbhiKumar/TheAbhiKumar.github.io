@@ -1,42 +1,15 @@
-#title : Jekyll Bootstrap
-#tagline: Site Tagline
-#author :
-#  name : Abhishek Kumar
-#  email : blah@email.test
-#  github : username
-#  twitter : username
 name: "Abhishek Kumar"
-#name: "Abhishek Kumar, Programmer"
-description: Programmer
-url: https://abkumar.me
+url: "https://abkumar.me"
 
 #gems:
 #- jekyll-sitemap
 
 markdown: kramdown
 
-highlighter: true
+# kramdown:
+  # input: GFM
+  # syntax_highlighter: rouge
 
-analytics :
-    provider : false #google 
-    google : 
-        tracking_id : 'UA-XXX-XX'
+highlighter: pygments
 
-permalink: pretty
-#permalink: :title
-#permalink: /blog/:year/:title
-#permalink: /:categories/:title
-#for projects:
-#permalink:
-#- post: pretty
-#- projects: /projects/:year/:month/:day/:title/
-#permalink: /:projects/:title
-
-include: [".htaccess"]
-exclude: ["node_modules", "package.json", "Gruntfile.js"]
-
-asset_bundler:
-  markup_templates:
-    js: "<script type='text/javascript' src='{{url}}' async></script>\n"
-    css: "<link rel='stylesheet' type='text/css' href='{{url}}' />\n"
-  compress: yui
+permalink: /blog/:year/:month/:title/

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Lorem Ipsum 3
-<!-- title: Understanding LSTM Neural Networks in C++ -->
-category: blog
-recent: true
+title: Understanding LSTM Neural Networks in C++
+category: none
+recent: none
+test: true
 ---
 
 {% include image.html url="/assets/2014/05/1.jpg" caption="Picture 1" %}{: .center-image }
@@ -20,8 +20,8 @@ Etiam eu tellus justo. Proin et auctor lectus. Nam sit amet porta quam, vitae ia
 
 Morbi in egestas ligula, et lobortis tellus. Nulla tortor arcu, faucibus nec rutrum eget, gravida a est. Nulla facilisi. Aenean sapien nibh, hendrerit eu velit non, scelerisque lobortis quam. Sed iaculis massa vel ex ullamcorper malesuada. Fusce rutrum leo sed pharetra consectetur. Ut congue vestibulum velit ac finibus. Nunc cursus molestie eros nec ultricies. Fusce at suscipit diam, vitae aliquet sapien.
 
-<!-- $$(P(a,b) = P(a) * P(b) = f(a) \cdot g(b)$$ -->
+$$(P(a,b) = P(a) * P(b) = f(a) \cdot g(b)$$
 
-<!-- $$(f\ast g)\ast h = f\ast (g\ast h)$$ -->
+$$(f\ast g)\ast h = f\ast (g\ast h)$$
 
-<!-- $$\sum_{(a+b)+c=d} (f(a) \cdot g(b)) \cdot h(c) ~~=~ \sum_{a+(b+c)=d} f(a) \cdot (g(b) \cdot h(c))$$ -->
+$$\sum_{(a+b)+c=d} (f(a) \cdot g(b)) \cdot h(c) ~~=~ \sum_{a+(b+c)=d} f(a) \cdot (g(b) \cdot h(c))$$

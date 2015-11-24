@@ -13,25 +13,23 @@
   document.createElement( "picture" );
 </script>
 
-<script src="/js/picturefill.min.js"></script>
-
-<script>
-// Toggle night theme
-var d = document.documentElement,
-    t = document.querySelectorAll(".js--toggle-lights")[0],
-    m = localStorage.getItem("nightmode");
-
-if(m == "true") {
-  d.classList.add("night-mode");
-}
-
-t.addEventListener("click", function(){
-  if(d.classList.contains("night-mode")) {
-    d.classList.remove("night-mode");
-    localStorage.setItem("nightmode", "false");
-  } else {
-    d.classList.add("night-mode");
-    localStorage.setItem("nightmode", "true");
-  }
-});
+<!-- <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'], ['\(', '\)'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
 </script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+-->
+
+<!-- <script src="/js/picturefill.min.js"></script> -->

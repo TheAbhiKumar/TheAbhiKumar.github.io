@@ -2,18 +2,17 @@
 layout: page
 title: Blog
 in-nav: true
+weight: 1
 ---
 
-<p class="gamma promo"><mark>This site is still under development.</mark></p>
-
 <ul class="unl posts__list">
-{% for post in site.posts %}
+{% for post in site.posts limit 4 %}
     {% if site.category == blog %}
         {% if post.hidden != true %}
       <li class="o--p">
         <a class="a--plain" href="{{ post.url }}">
           <span class="o--b beta o--z">{{ post.title }}</span>
-          <span class="meta delta o--b">{{ post.date | pretty }}</span>
+          <span class="meta delta o--b">{{ post.date | date: "%Y %B %-d" }}</span>
         </a>
       </li>
       {% endif %}
