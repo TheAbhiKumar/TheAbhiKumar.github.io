@@ -12,4 +12,5 @@ markdown: kramdown
 
 highlighter: pygments
 
+permalink: pretty
 permalink: /blog/:year/:month/:title/
