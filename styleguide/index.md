@@ -24,8 +24,6 @@ Third level headings are most often used to denote names rather than sections, s
 	1. This is a second-level numbered list item
 3. Numbered lists, like bulleted lists, are not used particularly often on this site.
 
-<!-- {% image alignleft assets/2014/05/2.jpg "This is a left aligned image and caption, set in Franklin Gothic." %} -->
-
 Images may take one of two forms; aligned (left), or centered (relative to the text column). Captions are encouraged, but not required.
 
 Footnotes can also be used to source sites[^3].
