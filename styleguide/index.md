@@ -1,9 +1,20 @@
 ---
-layout: page
-title: Style Guide
+layout: postnew
+title: styleguide
+in-nav: false
+weight: 4
 ---
 
-This page demonstrates the various visual styles that comprise the design of this site. Heading & body copy is set in Hoefler Text A, headlines are set in Requiem Display A, and captions are set in Whitney[^1].
+<div class="byline">
+  <div class="authors">
+    <a class="name" href="{{ page.link }}">{{ page.author }} [arXiv]</a>
+  </div>
+  <div class="tag">
+    <p>{{ page.url}}</p>
+  </div>
+</div>
+
+This page demonstrates the various visual styles that comprise the design of this site. Headings are set in PT Serif and body is set in Open Sans[^1]. Here is some code `std::iostream` inside a paragraph.
 
 ## Heading Level Two
 
@@ -32,21 +43,87 @@ Footnotes can also be used to source sites[^3].
 
 {% include image.html url="/assets/2014/05/1.jpg" caption="Picture 1" %}{: .center-image }
 
-Phasellus <em>scelerisque orci justo, a suscipit ipsum consectetur nec. Vestibulum gravida quam purus, vel feugiat leo pretium nec. Nam rhoncus</em> ac erat eu varius. Etiam pellentesque lectus vitae metus auctor aliquam. Integer eget elementum justo. Pellentesque vitae <strong>urna non mauris luctus scelerisque. Cras mattis, mi sit amet finibus sollicitudin, metus lectus hendrerit est, non vehicula</strong> ligula ante eu mauris.
+Here is some _italicized text_ and some **bold text**.
 
-<strong>Etiam eu tellus justo</strong> &#8211; Proin et auctor lectus. Nam sit amet porta quam, vitae iaculis sem. Donec urna metus, pulvinar at consectetur non, faucibus sit amet orci. Vestibulum nulla lacus, sodales a facilisis quis, pharetra in nibh. Vestibulum rhoncus suscipit ex nec molestie. Nulla felis dui, aliquet id vulputate sit amet, dapibus et turpis. Ut tincidunt orci nec massa mollis feugiat. Pellentesque vitae tincidunt diam. Quisque sed commodo nibh, vitae accumsan dolor. Mauris eget velit in erat consectetur ultricies vel in tellus.
+### Random Crap
 
-<strong>Morbi in egestas ligula</strong> &#8211; Et lobortis tellus. Nulla tortor arcu, faucibus nec rutrum eget, gravida a est. Nulla facilisi. Aenean sapien nibh, hendrerit eu velit non, scelerisque lobortis quam. Sed iaculis massa vel ex ullamcorper malesuada. Fusce rutrum leo sed pharetra consectetur. Ut congue vestibulum velit ac finibus. Nunc cursus molestie eros nec ultricies. Fusce at suscipit diam, vitae aliquet sapien.
+<!-- Comment on inputs/outputs in figure? -->
+{% include image.html url="/assets/ntm/rnn_basic_rnn.svg" %}
+
+The basic RNN design struggles with longer sequences, but a special variant -- ["long short-term memory" networks][olah2015lstm] -- can even work with these. Such models have been found to be very powerful, achieving remarkable results in many tasks including translation, voice recognition, and image captioning. As a result, recurrent neural networks have become very widespread in the last few years.
+
+<p>H<sub>2</sub>O</p>
+
+#### Heading Level Four
+
+As this has happened, we’ve seen a growing number of attempts to augment RNNs with new properties. Four directions stand out as particularly exciting:
+
+* [*Neural Turing Machines*](#neural-turing-machines) have external memory that they can read and write to.
+* [*Attentional Interfaces*](#attentional-interfaces) allow RNNs to focus on parts of their input.
+* [*Adaptive Computation Time*](#adaptive-computation-time) allows for varying amounts of computation per step.
+* [*Neural Programmers*](#neural-programmer) can call functions, building programs as they run.
+
+[olah2015lstm]: http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+
+<ul id="archive">
+  <li>
+  <span class="post-date">
+  <time datetime="2016-09-01">01 Sep<span class="year"> 2016</span></time>
+  </span>
+  <div class="description">
+    <a href="#">Title of post</a>
+    <p class="excerpt">Description</p>
+  </div>
+  </li>
+</ul>
+
+<div class="byline">
+        <div class="author">
+          <a class="name" href="https://arxiv.org/abs/1511.04834">Neelakantan, et al., 2015 [arXiv]</a>
+        </div>
+        <div class="date">
+          <div class="month">January 22, 2016</div>
+        </div>
+      </div>
+      
+### Random crap ending
 
 ## Language, Voice, and Persona
 
-{% highlight html %}
-<p class="gamma promo"><mark>Look both ways. "You can’t just stop."</mark></p>
+{% highlight cpp %}
+template <typename T>
+var<T> activation<T>::hard_sigmoid(const var<T>& input) {
+  auto output = var<T>::zeros_like(input);
+  const T* input_data = input.cpu_data();
+  T* output_data = output.mutable_cpu_data();
+  for (int i = 0; i < output.count(); i++) {
+    output_data[i] = std::max(0.0, std::min(1.0, 0.2*input_data[i] + 0.5));
+  }
+  return output;
+}
+{% endhighlight %}
+
+{% highlight python %}
+def sample(h, seed_ix, n):
+  """ 
+  sample a sequence of integers from the model 
+  h is memory state, seed_ix is seed letter for first time step
+  """
+  x = np.zeros((vocab_size, 1))
+  x[seed_ix] = 1
+  ixes = []
+  for t in xrange(n):
+    h = np.tanh(np.dot(Wxh, x) + np.dot(Whh, h) + bh)
+    y = np.dot(Why, h) + by
+    p = np.exp(y) / np.sum(np.exp(y))
+    ix = np.random.choice(range(vocab_size), p=p.ravel())
+    x = np.zeros((vocab_size, 1))
+    x[ix] = 1
+    ixes.append(ix)
+  return ixes
 {% endhighlight %}
 
 The last words in any given paragraph or other block-level elements are (automatically separated by a non-breaking space to prevent widows.
-
-<p class="gamma promo"><mark>Look both ways. "You can’t just stop."</mark></p>
 
 Here’s an example of all these dashes in use:
 
@@ -54,6 +131,23 @@ Here’s an example of all these dashes in use:
 
 There are two sides to every story.
 
-[^1]: Aenean lacinia [bibendum nulla](/blog/2015/11/understanding-lstm-neural-networks-in-c++/). Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia [odio sem](nec elit).
+<!-- Appendix -->
+[^1]: [PT Serif/Open Sans](https://fonts.google.com/specimen/PT+Serif)
 [^2]: *Italic* Footnotes
 [^3]: Vivamus [*sagittis lacus*](vel augue) laoreet rutrum faucibus dolor auctor.
+
+## Footnotes
+
+* footnotes will be placed here
+{:footnotes}
+
+<!-- Appendix -->
+<section class="appendix">
+  <h3>Errors, Reuse, and Citation</h3>
+  <p>If you see mistakes or want to suggest changes, please open an issue or submit a pull request on <a href="https://github.com/TheAbhiKumar/TheAbhiKumar.github.io">github</a>.</p>
+  <h3>References</h3>
+  <ul class="references">
+    <li>Alemi, A. A., Chollet, F., Irving, G., Szegedy, C., & Urban, J. (2016). DeepMath-Deep Sequence Models for Premise Selection. arXiv preprint arXiv:1606.04442.</li>
+    <li>Andrychowicz, M., & Kurach, K. (2016). Learning Efficient Algorithms with Hierarchical Attentive Memory. arXiv preprint arXiv:1602.03218.</li>
+  </ul>
+</section>

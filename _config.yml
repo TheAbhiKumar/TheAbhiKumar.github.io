@@ -3,14 +3,14 @@ url: "https://abkumar.me"
 
 #gems:
 #- jekyll-sitemap
-
+destination: public
+# Build settings
 markdown: kramdown
-
-# kramdown:
-  # input: GFM
-  # syntax_highlighter: rouge
-
-highlighter: pygments
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
 
 permalink: pretty
-permalink: /blog/:year/:month/:title/
+permalink: /:year/:title/

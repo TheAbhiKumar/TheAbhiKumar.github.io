@@ -1,34 +1,29 @@
 <!DOCTYPE html>
-<html class="night-mode" >
+<html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>{{ page.title }} | Abhishek Kumar</title>
+    {% if page.header_title %}
+    <title>{{ page.header_title }} &mdash; abkumar</title>
+    {% else %}
+    <title>{{ page.title }} &mdash; abkumar.me</title>
+    {% endif %}
+    <meta name="author" content="Abhishek Kumar" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#777">
     
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel='stylesheet' type='text/css' href="/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="/css/syntax.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|PT+Serif" rel="stylesheet">
 
-    <meta name="author" content="Abhishek Kumar" />
-    <meta name="keywords" content="c++, c, machine learning, opencl, programming"/>
-    <!-- <meta name="description" content="Personal website of Abhishek Kumar: Articles about C++"/> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#444444">
     <link rel="icon" type="image/png" href="/icon.png" sizes="192x192">
 
     <link rel="canonical" href="http://abkumar.me{{ page.url | replace:'/index.html','/' }}" />
+    {% include scripts.html %}
   </head>
 <body>
-  <header class="wrap site__header" role="banner">
-  <span class="namepad">
-    <a class="site__title o--b o--p" href="/" title="{{ site.name }} • Home">
-      <!-- <span class="delta o--b"></span> -->
-      <span class="o--b o--bl name">{{ site.name }}</span>
-    </a>
-    <span class="o--b o--br o--p">
-    <a class="a--plain" href="https://github.com/TheAbhiKumar"><img class="github" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiI+PHBhdGggZmlsbD0iIzQ0NCIgZD0iTTMuMTYgOS41ODJxLS4wNjIuMDctLjE1Ni0uMDIzLS4xMDItLjA5LS4wMy0uMTUuMDYtLjA3LjE1NS4wMi4wOS4wODUuMDMuMTV6bS0uMzI4LS40NzZxLjA3LjA5NCAwIC4xNDhRMi43NyA5LjMgMi43IDkuMnQwLS4xNDJxLjA3LS4wNTUuMTMyLjA0N3ptLS40NzctLjQ3cS0uMDQuMDU2LS4xMDIuMDE3LS4wNzgtLjA0LS4wNTUtLjA5NC4wMjMtLjA0LjEwMi0uMDIuMDc4LjA0LjA1NS4wOTJ6bS4yNDMuMjY3cS0uMDQ3LjA1NS0uMTI1LS4wMjMtLjA3LS4wODYtLjAxNi0uMTI1LjA0Ny0uMDQ3LjEyNS4wMjMuMDcuMDg2LjAxNi4xMjV6bTEuMDA3Ljg3NXEtLjAzLjA5NC0uMTQ4LjA0Ny0uMTMzLS4wMy0uMTAyLS4xMTd0LjE0OC0uMDU1cS4xMjUuMDQuMTAyLjEyNXptLjQ5My4wNHEwIC4wODUtLjEyNS4wODUtLjEzMy4wMTYtLjEzMy0uMDg2IDAtLjA4Ni4xMjUtLjA4Ni4xMzMtLjAxLjEzMy4wOXptLjQ1My0uMDhxLjAyLjA4LS4xMDMuMTF0LS4xNC0uMDYzLjEwOC0uMTE3cS4xMjYtLjAxNi4xNC4wN3ptNy41MzctNy40Njh2Ny41cTAgLjkzLS42NiAxLjU5dC0xLjU5LjY2aC0xLjc1cS0uMTI1IDAtLjE5LS4wMDh0LS4xNTMtLjA0LS4xMjUtLjExMi0uMDQtLjIxNVY5Ljc3OHEwLS43NTgtLjQwNi0xLjExLjQ0My0uMDQ2LjgtLjE0dC43MzMtLjMwNS42MzMtLjUyLjQxMy0uODIuMTYtMS4xNzZxMC0uOTQ1LS42MTYtMS42MS4yOS0uNzEtLjA2My0xLjU5My0uMjE2LS4wNy0uNjMuMDg2dC0uNzIuMzQ0bC0uMjk2LjE4N3EtLjcyNy0uMi0xLjUtLjJ0LTEuNS4yMDZxLS4xMjUtLjA4NS0uMzMyLS4yMXQtLjY1LS4zLS42NzMtLjEwNnEtLjM0NS44ODItLjA1NiAxLjU5My0uNjE2LjY2NS0uNjE2IDEuNjEgMCAuNjY0LjE2IDEuMTd0LjQxLjgyLjYzLjUyNS43MzUuMzA1LjguMTRxLS4zMS4yOC0uMzgyLjgwNS0uMTYzLjA3OC0uMzUuMTE3dC0uNDQ2LjA0LS41MS0uMTctLjQzNS0uNDg3cS0uMTUtLjI1LS4zOC0uNDA2dC0uMzktLjE5bC0uMTU2LS4wMjJxLS4xNjQgMC0uMjI3LjAzNHQtLjA0LjA5LjA3LjExLjEwMi4wOTNsLjA1My4wNHEuMTczLjA3Ny4zNC4yOTZ0LjI0Ny40bC4wOC4xOHEuMS4yOTguMzQzLjQ4dC41MjIuMjM1LjU0My4wNTUuNDM0LS4wMjdsLjE4LS4wM3EwIC4yOTcuMDA0LjgwNXQuMDA0LjUzcTAgLjE3NC0uMDg2LjI2NHQtLjE3LjEwMi0uMjYuMDEySDIuMzNxLS45MyAwLTEuNTktLjY2dC0uNjYtMS41OXYtNy41cTAtLjkzLjY2LTEuNTl0MS41OS0uNjZoNy41cS45MyAwIDEuNTkuNjZ0LjY2IDEuNTl6Ii8+PC9zdmc+"/></a>
-    </span>
-    </span>
-    <div style="clear: both;"></div>
+  <header class="site-header">
+  <nav class="site-nav">
+    <a class="site-title" href="/"> {{ site.name }} </a>
     {% include nav.html %}
+  </nav>
   </header>

@@ -1,0 +1,77 @@
+<div class="container">
+  <div id="timeline">
+    <div class="timelineitem">
+      <div class="tdate">2016 -</div>
+      <div class="ttitle">Research Scientist at <a href="http://www.wired.com/2016/04/openai-elon-musk-sam-altman-plan-to-set-artificial-intelligence-free/" target="_blank">OpenAI</a></div>
+      <div class="tdesc">Deep Learning, Generative Models, Reinforcement Learning</div>
+    </div>
+    <div class="timelineitem">
+      <div class="tdate">Summer 2015</div>
+      <div class="ttitle">DeepMind Internship</div>
+      <div class="tdesc">Deep Reinforcement Learning group</div>
+    </div>
+    <div class="timelineitem">
+      <div class="tdate">Summer 2013</div>
+      <div class="ttitle">Google Research Internship</div>
+      <div class="tdesc">Large-Scale Supervised Deep Learning for Videos.</div>
+    </div>
+    <div class="timelineitem">
+      <div class="tdate">2011 - 2015</div>
+      <div class="ttitle">Stanford Computer Science Ph.D. student</div>
+      <div class="tdesc">Deep Learning, Computer Vision, Natural Language Processing. My adviser was <a href="http://vision.stanford.edu/">Fei-Fei Li.</a></div>
+    </div>
+    <div class="timelineitem">
+      <div class="tdate">Summer 2011</div>
+      <div class="ttitle">Google Research Internship</div>
+      <div class="tdesc">Large-Scale Unsupervised Deep Learning for Videos.</div>
+    </div>
+    <div class="timelineitem">
+     <div class="tdate">2009-2011</div>
+      <div class="ttitle">University of British Columbia: Master's Degree</div>
+      <div class="tdesc">I worked with <a href="https://www.cs.ubc.ca/~van/">Michiel van de Panne</a> on learning Compositional Controllers for Physically-simulated Articulate Figures.</div>
+    </div>
+    <div class="timelineitem">
+      <div class="tdate">2005-2009
+      </div>
+      <div class="ttitle">University of Toronto: Bachelor's Degree</div>
+      <div class="tdesc">Double major in Computer Science and Physics.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+var more_projects_shown = false;
+function start() {
+  $("#showmoreprojects").click(function() {
+    if(!more_projects_shown) {
+      $("#moreprojects").slideDown('fast', function() {
+        $("#showmoreprojects").text('hide');
+      });
+      more_projects_shown = true;
+    } else {
+      $("#moreprojects").slideUp('fast', function() {
+        $("#showmoreprojects").text('show more');
+      });
+      more_projects_shown = false;
+    }
+  });
+
+  var more_pubs_shown = false;
+  $("#showmorepubs").click(function() {
+    if(!more_pubs_shown) {
+      $("#morepubs").slideDown('fast', function() {
+        $("#showmorepubs").text('hide');
+      });
+      more_pubs_shown = true;
+    } else {
+      $("#morepubs").slideUp('fast', function() {
+        $("#showmorepubs").text('show more');
+      });
+      more_pubs_shown = false;
+    }
+  });
+
+}
+
+</script>

@@ -1,17 +1,7 @@
-<nav class="site__nav" role="navigation">
+  {% assign pages = site.pages | sort:"weight" %}
   <ul class="nav">
-    {% assign pages = site.pages | sort:"weight" %}
-    {% for p in pages order:ascending %}
-      {% if p.in-nav == true %}
-        <li>
-          <a 
-            {% if p.url == page.url or (page.layout == "post" and p.url == "/blog/" ) %}
-              class="active"
-            {% endif %}
-              href="{{ p.url | replace:'/index.html','/' }}">{{ p.title }}
-          </a>
-        </li>
-      {% endif %}
-    {% endfor %}
+  {% for p in pages order:ascending %}
+  {% if p.in-nav == true %}
+    <li><a href="{{ p.url | replace:'/index.html','/' }}">{{ p.title }}</a></li>
+  {% endif %}{% endfor %}
   </ul>
-</nav>

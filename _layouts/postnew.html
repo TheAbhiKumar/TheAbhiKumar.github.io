@@ -1,0 +1,11 @@
+{% include header.html %}
+
+  <article class="post_colah">
+    <header class="post-header">
+      <h1>{{ page.title | widont }}</h1>
+      <p class="meta">{{ page.date | date: "%B %-d, %Y" }}</p>
+    </header>
+    {{ content }}
+  </article>
+
+{% include footer.html %}
