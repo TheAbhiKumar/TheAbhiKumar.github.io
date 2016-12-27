@@ -4,8 +4,7 @@ title: about
 header_title: Abhishek Kumar's homepage
 ---
 
-Hi, I'm **Abhishek Kumar**. I'm a student at UC San Diego in the
-computer science program. I work in the Machine Learning, Perception, and Cognition Lab, where my research involves developing statistical learning/computing models for structured, large-scale, and multi-modality data prediction. I have recently been working with recurrent neural networks and natural langauge processing. I am on [Github][github] and [Twitter][twitter]. [Email me][email] if you want to get in touch.
+Hi, I'm **Abhishek Kumar**. I'm an undergraduate student at UC San Diego studying computer science. I am interested in recurrent neural networks and reinforcement learning problems. I am on [Github][github] and [Twitter][twitter]. [Email me][email] if you want to get in touch.
 
 [github]: https://github.com/TheAbhiKumar
 [twitter]: https://twitter.com/_abkumar
