@@ -1,8 +1,8 @@
 ---
 layout: postnew
-title: Review of Neural Programmers
+title: Starcraft II Reinforcement Learning AI
 category: blog
-excerpt: A short review of neural programmers and their ability to learn programs
+excerpt: A review of starcraft II ai
 ---
 
 > This post is a work in progress
@@ -86,6 +86,9 @@ Both of these new models have shown superior results on many tasks that previous
 
 [Neelakantan, *et al.*, 2015]: http://arxiv.org/abs/1511.04834
 [Reed & de Freitas, 2015]: https://arxiv.org/abs/1511.06279
+
+[](http://starcraft.blizzplanet.com/blog/comments/blizzcon-2016-deepmind-and-starcraft-ii-deep-learning-panel-transcript)
+[](http://starcraft.blizzplanet.com/blog/comments/blizzcon-2016-deepmind-and-starcraft-ii-deep-learning-panel-transcript/2)
 
 http://arxiv.org/abs/1511.08228
 

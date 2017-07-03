@@ -61,7 +61,7 @@ small, sub, sup {
 
 .site-header {
   margin: 12px auto;
-  max-width: 800px;
+  max-width: 704px; /*### IMP CHANGE Prev: 800*/
 }
 
 .site-nav {
@@ -111,7 +111,7 @@ small, sub, sup {
 
 .post_colah {
   overflow: hidden;
-  /*max-width: 800px;*/
+  /*max-width: 80704;*/ /*### IMP CHANGE Prev: 800*/
 }
 
 .post_colah ul {
@@ -296,7 +296,7 @@ small, sub, sup {
   margin-left: auto;
   margin-right: auto;
   /*width: 648px;*/
-  width: 800px;
+  width: 704px; /*### IMP CHANGE Prev: 800*/
   box-sizing: border-box;
 }
 
@@ -503,7 +503,8 @@ ul#archive li time {
   display: block;
   float: left;
   /*width: 24%;*/
-  padding-right: 2%;
+  /*padding-right: 2%;*//*WTF*/
+  padding-right: 5px;
   text-align: right;
 }
 
@@ -555,7 +556,7 @@ li time {
   font-size: 14px;
   margin: 48px auto;
   position: relative;
-  width: 984px;
+  width: 748px; /*### IMP CHANGE PREV: 960*/
 }
 
 .figimg img, 
@@ -573,7 +574,7 @@ li time {
 
 @media (min-width:992px){
   .post_colah figure {
-    width: 984px;
+    width: 748px; /*### IMP CHANGE PREV: 960*/
   }
 }
 
@@ -582,7 +583,7 @@ li time {
 
 @media (min-width: 992px) {
   figure.highlight {
-    width: 800px;
+    width: 704px; /*### IMP CHANGE Prev: 800*/
   }
 }
 

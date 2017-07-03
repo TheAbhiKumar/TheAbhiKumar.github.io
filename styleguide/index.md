@@ -14,7 +14,7 @@ weight: 4
   </div>
 </div>
 
-This page demonstrates the various visual styles that comprise the design of this site. Headings are set in PT Serif and body is set in Open Sans[^1]. Here is some code `std::iostream` inside a paragraph.
+This page demonstrates in <span class="equation-mimic">O(n)</span> time the various visual styles that comprise the design of this site. Headings are set in PT Serif and body is set in Open Sans[^1]. Here is some code `std::iostream` inside a paragraph.
 
 ## Heading Level Two
 

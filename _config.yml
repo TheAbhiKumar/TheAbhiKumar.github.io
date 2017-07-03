@@ -6,6 +6,8 @@ url: "https://abkumar.me"
 destination: public
 # Build settings
 markdown: kramdown
+kramdown:
+  math_engine: mathjax
 highlighter: rouge
 kramdown:
   input: GFM
