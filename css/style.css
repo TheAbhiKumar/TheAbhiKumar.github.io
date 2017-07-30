@@ -1,10 +1,10 @@
-/* 1784
-/* 949
-/* 887
-/* 733
-/* 667/12298
 /*
-/*
+// 451/7981
+// 413/7420
+// 
+// 
+*/
+/* font: font-style font-variant font-weight font-size/line-height font-family;*/
 
 /* Reset.css 46/1042
 /* ----------------------------------------------------------*/
@@ -22,12 +22,7 @@
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
-html, body { height: 100%; }
-
-body {
-  background-color: #fcfcfc;
-  font: 400 16px/1.5 'Open Sans', Helvetica, 'Droid Sans', Arial, sans-serif;
-}
+/*html, body { height: 100%; }*/
 
 h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
 
@@ -44,23 +39,48 @@ li ol,li ul { margin-bottom: 0; }
 /*picture { display: block; }*/
 strong, b { font-weight: bold; }
 sub { vertical-align: sub; }
-sup { vertical-align: super; }
+/*sup { vertical-align: super; }*/
 time { text-align: center; }
 tt, code, kbd, samp { font-family: monospace; }
-ul { list-style: none; }
+ul { list-style: disc; }
 ul,ol { padding-left: 1.4em; }
 
 small, sub, sup {
-  font-size: 75%;
+  /*font-size: 75%;*/
   line-height: 0;
   position: relative;
 }
 
-/* Site Header 29/458
+article {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 704px;
+}
+
+/* Fonts 23/404
 /* ------------------------------------------------------ */
 
+@font-face {
+  font-family: 'cheltenham';
+  src: url('nyt-cheltenham-medium.ttf');
+}
+
+/* Table of Contents
+/* ------------------------------------------------------ */
+
+
+/* Site Header 38/695
+/* ------------------------------------------------------ */
+
+body {
+  /*background-color: #fff;*/
+  background-color: #fcfcfc;
+  font: 400 16px/1.5 'Georgia', Helvetica, 'Droid Sans', Arial, sans-serif;
+  padding: 12px;
+}
+
 .site-header {
-  margin: 12px auto;
+  margin: auto;
   max-width: 704px; /*### IMP CHANGE Prev: 800*/
 }
 
@@ -69,24 +89,23 @@ small, sub, sup {
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
+  padding-top: 6px;
 }
 
 .site-nav a:link,
 .site-nav a:visited,
 .site-nav a:hover,
 .site-nav a:active {
-  font: 18px 'PT Serif';
-  color: #333;
   /*letter-spacing: -0.4px;*/
+  font: 24px 'cheltenham';
+  /*font-weight: bold;*/
+  text-align: center;
+  color: #333;
 }
 
 .nav li {
   display: inline-block;
   margin-left: 20px;
-}
-
-@media (max-width: 824px) {
-  .site-header { margin: 12px; }
 }
 
 /* Post styles */
@@ -109,57 +128,40 @@ small, sub, sup {
   text-align: center;
 }
 
-.post_colah {
+.page {
+  padding-top: 8px;
+  padding-bottom: 24px;
   overflow: hidden;
-  /*max-width: 80704;*/ /*### IMP CHANGE Prev: 800*/
 }
 
-.post_colah ul {
-  list-style: inside;
+/*.page ul {
+  list-style-type: disc;
+}*/
+
+#pubs {
+  list-style: outside;
 }
 
-/*.post_colah/*##*/ /*{ margin: 0 0 30px; }*/
-
-/*.post_colah/*##*/ /*> * { margin: 20px 0; }*/
-
-.post_colah/*##*/ h1,
-.post_colah/*##*/ h2,
-.post_colah/*##*/ h3,
-.post_colah/*##*/ h4,
-.post_colah/*##*/ h5,
-.post_colah/*##*/ h6 {
-  line-height: 1;
-  font-weight: 300;
-  /*margin: 40px 0 20px;*/
+#paper {
+  margin: 8px 0;
 }
 
-.post_colah/*##*/ h2 {
+.page h2 {
   font-size: 32px;
-  letter-spacing: -1.25px;
 }
 
-.post_colah/*##*/ h3 {
+.page h3 {
   font-size: 26px;
-  letter-spacing: -1px;
 }
 
-.post_colah/*##*/ h4 {
-  font-size: 20px;
-  letter-spacing: -1px;
-}
-
-.post_colah/*##*/ blockquote {
+.page blockquote {
   border-left: 4px solid #e8e8e8;
   padding-left: 20px;
   font-size: 18px;
   opacity: .6;
-  letter-spacing: -1px;
   font-style: italic;
   margin: 30px 0;
 }
-
-.post_colah/*##*/ ul,
-.post_colah/*##*/ ol { padding-left: 20px; }
 
 /* Footnotes 19/299
 /* ----------------------------------------------------------*/
@@ -167,10 +169,19 @@ small, sub, sup {
 .footnote, .footnote:visited {
   padding: .15em;
   text-decoration: none;
+  /*font-size: 1.2em;*/
 }
 
 .footnote:hover, .footnote:visited:hover {
   text-decoration: underline;
+}
+
+.footnote:before {
+   content: "[";
+}
+
+.footnote:after {
+   content: "]";
 }
 
 .footnotes {
@@ -184,68 +195,6 @@ small, sub, sup {
   margin-bottom: 0;
 }
 
-/* Appendix 63/1346
-/* ----------------------------------------------------------*/
-
-.post_colah .appendix {
-  font: 14px/24px 'Open Sans';
-  width: 648px;
-  margin-top: 96px;
-  margin-bottom: 0;
-  padding-top: 36px;
-  padding-bottom: 60px;
-  padding-left: calc(50% - (648px / 2));
-  padding-right: calc(50% - (648px / 2));
-  border-top: 1px solid rgba(0,0,0,0.1);
-  color: rgba(0,0,0,0.5);
-  background: rgba(0,0,0,0.025);
-  box-sizing: content-box;
-}
-
-.post_colah .appendix h3 {
-  font-size: 16px;
-  font-weight: 400;
-  margin-top: 18px;
-  margin-bottom: 18px;
-  color: rgba(0,0,0,0.65);
-}
-
-.references {
-  font-size: 12px;
-  line-height: 20px;
-  list-style: inside;
-}
-
-/* Note: changed form 648 to 800*/
-@media (max-width: 816px) {
-  .post_colah > .appendix {
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-    /*width: -webkit-calc(100% - 18px);*/
-    /*width: -moz-calc(100% - 18px);*/
-    /*width: -o-calc(100% - 18px);*/
-    width: 100%;
-    margin: -8px;
-    padding: 8px;
-    /*box-sizing: border-box;*/
-  }
-
-  .appendix > h3,
-  .appendix > h4,
-  .appendix > ul,
-  .appendix > ol,
-  .appendix > pre,
-  .appendix > p {
-    margin-left: auto;
-    margin-right: auto;
-    width: -webkit-calc(100% - 18px);
-    width: -moz-calc(100% - 18px);
-    width: -o-calc(100% - 18px);
-    width: calc(100% - 18px);
-    /*box-sizing: border-box;*/
-  }
-}
-
 /* media queries */
 /* ----------------------------------------------------------*/
 
@@ -255,219 +204,105 @@ small, sub, sup {
   .site-title:visited {
     font-size: 18px;
   }
-  
-  .site-nav {
-    /*padding: 0 12px;*/
-    /*padding: 0;*/
-  }
-
-  .post_colah {
-    padding: 8px;
-  }
 
   .post-header h1 { font-size: 36px; }
-  .post_colah h2 { font-size: 28px; }
-  .post_colah h3 { font-size: 22px; }
-  .post_colah h4 { font-size: 18px; }
-  .post_colah blockquote { padding-left: 10px; }
-  .post_colah ul,
-  .post_colah ol { padding-left: 10px; }
+  .page h2 { font-size: 28px; }
+  .page h3 { font-size: 22px; }
+  .page blockquote { padding-left: 10px; }
 }
 
-
-/* If we have elements as direct descendent children of a .post_colah, we should assume they are "w-body" */
 .post-header > h1,
-.post-header > .byline,
-.post_colah > h1,
-.post_colah > h2,
-.post_colah > h3,
-.post_colah > h4,
-.post_colah > h5,
-.post_colah > ul,
-.post_colah > ol,
-.post_colah > figure,
-.post_colah > figure > figcaption,
-.post_colah > pre,
-.post_colah > p,
-.post_colah > blockquote,
-.post_colah > section,
-.post_colah > .footnotes,
-.post_colah > .byline {
-  margin-left: auto;
-  margin-right: auto;
+.page > h1,
+.page > h2,
+.page > h3,
+.page > ul,
+.page > ol,
+.page > figure,
+.page > figure > figcaption,
+.page > pre,
+.page > p,
+.page > blockquote,
+.page > .footnotes {
+  /*margin-left: auto;
+  margin-right: auto;*/
   /*width: 648px;*/
-  width: 704px; /*### IMP CHANGE Prev: 800*/
+  /*width: 704px; ### IMP CHANGE Prev: 800*/
   box-sizing: border-box;
 }
 
-.post_colah {
-  color: rgba(0, 0, 0, 0.8);
-  font: 16px/28px 'Open Sans', sans-serif;
+.page {
+  font: 18px/28px -apple-system, system-ui, BlinkMacSystemFont, "Roboto", sans-serif;
 }
 
-.post_colah h1 {
-  font: 400 50px/1.1em 'PT Serif', Georgia, serif;
-  /*font: 400 32px/1.1em 'PT Serif', Georgia, serif;*/
-  /*font-family: 'PT Serif', Georgia, serif;*/
-  /*font-weight: 400;*/
-  /*font-size: 50px;*/
-  /*line-height: 54px;*/
+.page ul,
+.page ol,
+.page .footnotes, {
+  color: rgba(0, 0, 0, 0.8);
+  font: 18px/28px -apple-system, system-ui, BlinkMacSystemFont, "Roboto", sans-serif;
+}
+
+.page h1 {
+  font: 400 50px/1.1em 'cheltenham', Georgia, serif;
   margin-bottom: 15px;
   -webkit-font-smoothing: antialiased;
 }
 
-.post_colah h2 {
-  font-weight: 500;
-  font-size: 30px;
-  line-height: 1.45em;
-  font-family: 'PT Serif', Georgia, serif;
+.page h2 {
+  font: 500 30px/1.45em 'cheltenham', Georgia, serif;;
   margin-bottom: 24px;
   -webkit-font-smoothing: antialiased;
 }
 
-.post_colah h3 {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.4em;
-  font-family: 'Open Sans', sans-serif;
-  margin-top: 24px;
+.page h3 {
+  font: italic 400 26px/1.4em 'cheltenham', serif;
+  margin-top: 36px;
+  margin-bottom: 18px;
+}
+
+.page p {
   margin-bottom: 24px;
-}
-
-.post_colah h4 {
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 14px;
-  line-height: 1.4em;
-  font-family: "Open Sans", sans-serif;
-}
-
-.post_colah a {
-  /*color: inherit;*/
-}
-
-/*.post_colah p .link {
-  text-decoration: underline;
-  cursor: pointer;
-}
-*/
-.post_colah p {
-  margin-bottom: 24px;
-  /*text-align: justify;*/
   /*-webkit-hyphens: auto;*/
-  /*-webkit-font-smoothing: antialiased;*/
+  /*hyphens: auto;*/
 }
 
-.post_colah .footnotes {
-  margin-bottom: 24px;
-}
-
-.post_colah ul {
-  padding-left: 20px;
-}
-
-.post_colah li {
-  /*margin-bottom: 24px;*/
-
-}
-
-.post_colah hr {
+.page hr {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin: 40px 0;
   width: 200%;
   position: relative;
   left: -50%;
 }
 
-.post_colah section {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-/* Byline */
-.post_colah .byline {
-  font: 500 12px/18px "Open Sans", helvetica, sans-serif;
-  margin-bottom: 48px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding-top: 12px;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.byline p {
-  margin-bottom: 0;
-}
-
-.post_colah .byline a {
-  text-decoration: none;
-}
-
-.post_colah .byline a:hover {
-  color: rgba(0, 0, 0, 0.9);
-}
-
-.post_colah .byline .authors {
-  display: inline-block;
-}
-
-.post_colah .byline .name {
-  /*text-transform: uppercase;*/
-  display: block;
-}
-
-.post_colah .byline .tag {
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
-  padding-left: 15px;
-  margin-left: 15px;
-  display: inline-block;
-}
-
-.post_colah span.equation-mimic {
-  font-family: georgia;
-  font-size: 115%;
-  font-style: italic;
+.page span.equation-mimic {
+  font: italic 110% Georgia;
 }
 
 /* Note: changed form 648 to 800*/
 @media (max-width: 816px) {
-  .post-header h1 { font-size: 36px; }
-  .post_colah h2 { font-size: 28px; }
-  .post_colah h3 { font-size: 22px; }
-  .post_colah h4 { font-size: 18px; }
-  .post_colah blockquote { padding-left: 10px; }
+  .post-header h1 { font-size: 44px; }
+  .page h2 { font-size: 28px; }
+  .page h3 { font-size: 22px; }
+  .page blockquote { padding-left: 10px; }
 
   .post-header > h1,
-  .post-header > .byline,
-  .post_colah > h2,
-  .post_colah > h3,
-  .post_colah > h4,
-  .post_colah > h5,
-  .post_colah > ul,
-  .post_colah > ol,
-  .post_colah > figure,
-  .post_colah > pre,
-  .post_colah > p,
-  .post_colah > blockquote,
-  .post_colah > section,
-  .post_colah > .footnotes,
-  .post_colah > .byline {
+  .page > h2,
+  .page > h3,
+  .page > ul,
+  .page > ol,
+  .page > figure,
+  .page > pre,
+  .page > p,
+  .page > blockquote,
+  .page > .footnotes {
     margin-left: auto;
     margin-right: auto;
-    /*width: -webkit-calc(100% - 14px);
-    width: -moz-calc(100% - 14px);
-    width: -o-calc(100% - 14px);
-    width: calc(100% - 14px);*/
     width: 100%;
     box-sizing: border-box;
   }
 }
 
-.post_colah a {
-  /*text-decoration: underline;*/
-}
-
-.post_colah blockquote {
+.page blockquote {
   border-left: 4px solid #e8e8e8;
   /*padding-left: 20px;*/
   font-size: 18px;
@@ -479,84 +314,46 @@ small, sub, sup {
   /*text-align: right;*/
 }
 
+/* Archive 17/259
+/* ------------------------------------------------------ */
+
 ul#archive {
   list-style: none;
-  padding-bottom: 20px;
   padding-left: 0;
-  /*margin: 20px 0;*/
+}
+
+ul#archive li span {
+  color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
 }
 
 ul#archive li {
-  clear: left;
   margin-bottom: 20px;
 }
 
-ul#archive li:after {
-  content: ".";
-  display: block;
-  clear: both;
-  height: 0;
-  visibility: hidden;
+ul#archive li a {
+  font: 24px 'cheltenham', Georgia, serif;
 }
 
-ul#archive li time {
-  display: block;
-  float: left;
-  /*width: 24%;*/
-  /*padding-right: 2%;*//*WTF*/
-  padding-right: 5px;
-  text-align: right;
-}
+/* ????
+/* ------------------------------------------------------ */
 
-ul#archive li .description {
-  float: left;
-  width: 80%;
-}
-
-ul#archive li .description .excerpt {
-  margin-top: 0.5em;
-  font-family: 'PT Serif';
-  font-size: 18px;
-}
-
-.description a {
-  font-family: 'PT Serif';
-  font-size: 18px; 
-  text-decoration: none;
-  color: #2F9EEF;
-}
-
-.post_colah p a,
-.authors a {
+.page p a {
   color: #2F9EEF;
   text-decoration: none;
 }
 
-.post_colah p a:hover,
-.authors a:hover {
+.page p a:hover {
   color: #2F9EEF;
   text-decoration: underline;
 }
 
-@media (max-width: 500px) {
-  time span.year {
-    display: none;
-  }
-}
-
-li time {
-  width: 15%;
-}
-
-/* Figure/Figcaption 26/381
+/* Figure/Figcaption 17/316
 /* ----------------------------------------------------------*/
 
 .figimg {
-  color: #555;
-  font-size: 14px;
   margin: 48px auto;
   position: relative;
-  width: 748px; /*### IMP CHANGE PREV: 960*/
 }
 
 .figimg img, 
@@ -567,105 +364,43 @@ li time {
 }
 
 .figimg figcaption {
-  font: 12px/18px 'Open Sans';
-  color: rgba(0, 0, 0, 0.6);
-  text-align: center;
+  font: 12px/18px -apple-system, system-ui, BlinkMacSystemFont, "Roboto", sans-serif;
+  color: rgb(146, 149, 152);
+  /*text-align: center;*/
 }
 
-@media (min-width:992px){
-  .post_colah figure {
-    width: 748px; /*### IMP CHANGE PREV: 960*/
-  }
-}
-
-/* Synax highlighter 22/368
+/* ???
 /* ----------------------------------------------------------*/
 
-@media (min-width: 992px) {
-  figure.highlight {
-    width: 704px; /*### IMP CHANGE Prev: 800*/
-  }
+.page p {
+  font-family: 'Georgia';
+  font-size: 20px;
 }
 
-.highlight pre code {
-  border-radius: 3px;
-  display: block;
-  font-size: 15px;
-  margin: 20px -12px;
-  overflow: scroll;
-  padding: 8px 12px;
+.page .katex-display {
+  /*max-width: 150%;*/
+  /*overflow: scroll;*/
+  overflow-x: auto;
+  overflow-y: hidden;
+  word-break: normal !important;
+  word-wrap: normal !important;
+  white-space: pre !important;
 }
 
-.post_colah p code {
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 2px;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 15px;
-  padding: 4px 7px;
+.katex-display::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
 }
 
-.highlight pre code { background-color: #272822; }
-.highlight pre { background-color: #272822; }
-.highlight .hll { background-color: #272822; }
-.highlight .c { color: #75715e } /* Comment */
-.highlight .err { color: #960050; background-color: #1e0010 } /* Error */
-.highlight .k { color: #66d9ef } /* Keyword */
-.highlight .l { color: #ae81ff } /* Literal */
-.highlight .n { color: #f8f8f2 } /* Name */
-.highlight .o { color: #f92672 } /* Operator */
-.highlight .p { color: #f8f8f2 } /* Punctuation */
-.highlight .cm { color: #75715e } /* Comment.Multiline */
-.highlight .cp { color: #75715e } /* Comment.Preproc */
-.highlight .c1 { color: #75715e } /* Comment.Single */
-.highlight .cs { color: #75715e } /* Comment.Special */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .kc { color: #66d9ef } /* Keyword.Constant */
-.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
-.highlight .kn { color: #f92672 } /* Keyword.Namespace */
-.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
-.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
-.highlight .kt { color: #66d9ef } /* Keyword.Type */
-.highlight .ld { color: #e6db74 } /* Literal.Date */
-.highlight .m { color: #ae81ff } /* Literal.Number */
-.highlight .s { color: #e6db74 } /* Literal.String */
-.highlight .na { color: #a6e22e } /* Name.Attribute */
-.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
-.highlight .nc { color: #a6e22e } /* Name.Class */
-.highlight .no { color: #66d9ef } /* Name.Constant */
-.highlight .nd { color: #a6e22e } /* Name.Decorator */
-.highlight .ni { color: #f8f8f2 } /* Name.Entity */
-.highlight .ne { color: #a6e22e } /* Name.Exception */
-.highlight .nf { color: #a6e22e } /* Name.Function */
-.highlight .nl { color: #f8f8f2 } /* Name.Label */
-.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
-.highlight .nx { color: #a6e22e } /* Name.Other */
-.highlight .py { color: #f8f8f2 } /* Name.Property */
-.highlight .nt { color: #f92672 } /* Name.Tag */
-.highlight .nv { color: #f8f8f2 } /* Name.Variable */
-.highlight .ow { color: #f92672 } /* Operator.Word */
-.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
-.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
-.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
-.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
-.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
-.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
-.highlight .sc { color: #e6db74 } /* Literal.String.Char */
-.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
-.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
-.highlight .se { color: #ae81ff } /* Literal.String.Escape */
-.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
-.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
-.highlight .sx { color: #e6db74 } /* Literal.String.Other */
-.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
-.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
-.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
-.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
-.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
-.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
-.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
-.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
-.highlight .gh { } /* Generic Heading & Diff Header */
-.highlight .gu { color: #75715e; } /* Generic.Subheading & Diff Unified/Comment? */
-.highlight .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
-.highlight .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
+.katex-display::-webkit-scrollbar-corner {
+  background: 0;
+}
+
+.katex-display::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.26);
+}
+
+.footnotes p {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Roboto", sans-serif;
+  font-size: 14px;
+}

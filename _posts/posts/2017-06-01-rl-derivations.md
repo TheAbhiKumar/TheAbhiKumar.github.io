@@ -1,15 +1,9 @@
 ---
-layout: postnew
+layout: postmath
 title: A List of Reinforcement Learning Derivations
 category: blog
-excerpt: A review of starcraft II ai
+excerpt: A List of Reinforcement Learning Derivations
 ---
-<!-- ---
-layout: page
-title: A List of Reinforcement Learning Derivations
-permalink: /rl-derivations/
---- -->
-
 
 *Last updated May 24, 2017*
 
@@ -23,13 +17,13 @@ Only posting publicly in case other people find it useful.
 TODO: Add paper links for where I first encountered these proofs,
 relevant papers, etc.
 
-# Table of Contents
+## Table of Contents
 
 * Clobbered for auto generated table of contents
 {:toc}
 
 
-## Log derivative trick
+### Log derivative trick
 
 $$
 \nabla_\theta \log p(x;\theta) = \frac{\nabla_\theta p(x;\theta)}{p(x;\theta)}
@@ -43,7 +37,7 @@ $$
 \end{aligned}
 $$
 
-# REINFORCE
+## REINFORCE
 
 Let $$X$$ be a random variable with known p.d.f. $$p_\theta(X)$$.
 (From here on, $$\theta$$ will be omitted. In general, $$\theta$$
@@ -94,7 +88,7 @@ $$
 $$
 
 
-## Expectation of Score Function is Zero.
+### Expectation of Score Function is Zero.
 
 REMEMBER THIS, IT'S IMPORTANT ALL OVER THE PLACE.
 
@@ -114,7 +108,7 @@ is especially helpful for MDPs. By the Markov property, $$a_i\vert s_i$$
 is the same as $$a_i \vert s_{0:i},a_{0:i-1}$$.
 
 
-## REINFORCE Variance Reduction
+### REINFORCE Variance Reduction
 
 Now that we're married to the MDP framework, there are ways to quickly
 reduce variance without adding any bias.
@@ -193,16 +187,16 @@ scaling is positive if and only if the reward for taking action $$a_i$$
 is better than the average.
 
 
-# Q-Learning
+## Q-Learning
 
-## Bellman Operators
+### Bellman Operators
 
 Operators map functions to functions. We can think of each application of an
 operator as one step of an optimization.
 
 Use $$\mathcal{T}$$ to denote operators.
 
-## Proof of Convergence For Tabular Problems
+### Proof of Convergence For Tabular Problems
 
 Let $$\mathcal{T}^{\pi}$$ be the Bellman operator for $$\pi$$. Define this
 as
@@ -283,7 +277,7 @@ With parametrized Q-functions, we are no longer guaranteed to converge,
 
 TODO: add soft Q-Learning.
 
-# Natural Policy Gradient
+## Natural Policy Gradient
 
 Natural policy gradient is a special case of natural gradient, so let's
 explain that first.
@@ -413,12 +407,12 @@ with an adaptive learning rate to take the largest step it can within
 the trust region.)
 
 
-# Equivalent Formulations of Policies and Reward
+## Equivalent Formulations of Policies and Reward
 
 (Adapted from a mix of Generative Adversarial Imitation Learning
 and Trust-Region Policy Optimization.)
 
-## State Visitation / Occupency Measure
+### State Visitation / Occupency Measure
 
 The state visitation frequency is defined as the discounted
 sum of probabilities of visiting a given state.
@@ -480,7 +474,7 @@ good $$(s,a)$$ more often. It can be easier to make arguments
 in one view than in the other.
 
 
-## Advantage With Respect to Another Policy
+### Advantage With Respect to Another Policy
 
 The expected return of $$\pi'$$ can be defined by its expected
 advantage over $$\pi$$, which is handy for thinking about the difference
@@ -521,7 +515,7 @@ $$
 
 completing the proof.
 
-# Q-Prop
+## Q-Prop
 
 In REINFORCE, you can subtract a state-dependent baseline without biasing the
 gradient. The Q-Prop paper gives a way to subtract an action-dependent baseline.

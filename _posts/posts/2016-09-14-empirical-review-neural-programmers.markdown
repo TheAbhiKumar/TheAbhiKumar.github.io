@@ -5,11 +5,13 @@ category: blog
 excerpt: A short review of neural programmers and their ability to learn programs
 ---
 
+
+
 > This post is a work in progress
 
 At ICLR 2016 there were a couple of papers on neural programmers. The architecture of these networks introduce with it many benefits. They have complex operations and have combinations of these operations while being able to successfully generalize over unknown input ranges. Both of these networks outperform sequence to sequence models in many tasks, particularly because of their ability to generalize well.
 
-The first, the Neural Programmer ([Neelakantan, *et al.*, 2015]), is one approach to this. The other, the Neural Programmer-Interpreter ([Reed & de Freitas, 2015]), which won best paper at ICLR 2016, can accomplish a number of very interesting tasks, but requires supervision in the form of correct programs.
+The first, the Neural Programmer ([Neelakantan, *et al.*, 2015])[^1], is one approach to this. The other, the Neural Programmer-Interpreter ([Reed & de Freitas, 2015])[^2], which won best paper at ICLR 2016, can accomplish a number of very interesting tasks, but requires supervision in the form of correct programs.
 
 ---
 
@@ -54,7 +56,7 @@ The history RNN module keeps track of the previous operations and data segments 
 
 ### Experiment
 
-{% include image.html url="/assets/2016/np_results.png" description="Summary of the performance of Neural Programmer on various versions of the synthetic table-comprehension task." %}
+{% include image.html url="/assets/2016/np_results.png" caption="Summary of the performance of Neural Programmer on various versions of the synthetic table-comprehension task." %}
 
 50,000 question, data source and answer triples were used as synthetic examples to train the network. Expensive annotations are not required for the training examples and Neural Programmer doesn't need rules to guide the program other than the given triple, making it a general framework. As a result, they claim that one only needs to define basic operations which requires human effort than previous induction techniques. The model performs very well and can generalize to unseen question templates.
 
@@ -74,7 +76,7 @@ One feature of the NPI is that can learn new programs. Traditional neural networ
 
 In one experiment, to evaluate generalization ability, a comparison between NPI and sequence-to-sequence models was demonstrated with the addition task. The NPI was "trained on 32 examples for problem lengths 1,...,20 generalizes with 100% accuracy to all the lengths [they] tried (up to 3000)". The Sequence-to-sequence model (S2S-stack) was trained on twice as many examples with length over 2000, yet barely generalizes for length over five.
 
-{% include image.html url="/assets/2016/add_general.png" description="Comparing NPI and Seq2Seq variants on addition generalization to longer sequences. Figure from [Reed & de Freitas, 2015]." %}
+{% include image.html url="/assets/2016/add_general.png" caption="Comparing NPI and Seq2Seq variants on addition generalization to longer sequences. Figure from [Reed & de Freitas, 2015]." %}
 
 This is because NPI learns how to perform programs well using local information such as adding single digits or performing carries. They believe that this lack of locality for sequence-to-sequence models has a large impact on its generalization performance.
 
@@ -90,10 +92,11 @@ Both of these new models have shown superior results on many tasks that previous
 http://arxiv.org/abs/1511.08228
 
 <!-- Appendix -->
-<section class="appendix">
-  <h3>References</h3>
-  <ul class="references">
-    <li>Neelakantan, A., Le, Q. V., & Sutskever, I. (2015). Neural programmer: Inducing latent programs with gradient descent. arXiv preprint arXiv:1511.04834.</li>
-    <li>Reed, S., & de Freitas, N. (2015). Neural programmer-interpreters. arXiv preprint arXiv:1511.06279.</li>
-  </ul>
-</section>
+[^1]: Neelakantan, A., Le, Q. V., & Sutskever, I. (2015). Neural programmer: Inducing latent programs with gradient descent. [arXiv preprint arXiv:1511.04834][Neelakantan, *et al.*, 2015].
+[^2]: Reed, S., & de Freitas, N. (2015). Neural programmer-interpreters. [arXiv preprint arXiv:1511.06279][Reed & de Freitas, 2015].
+
+---
+## Footnotes/References
+
+* footnotes will be placed here
+{:footnotes}

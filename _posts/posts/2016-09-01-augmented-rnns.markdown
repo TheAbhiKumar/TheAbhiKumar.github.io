@@ -2,7 +2,7 @@
 layout: postnew
 title: Attention and Augmented Recurrent Neural Networks
 category: blog
-hidden: true
+hidden: false
 excerpt: Recurrent neural networks are one of the staples of deep learning, allowing neural networks to work with sequences of data like text, audio and video. They can be used to boil a sequence down into a high-level understanding, to annotate sequences, and even to generate new sequences from scratch!
 ---
 
@@ -261,7 +261,7 @@ Augmented recurrent neural networks, and the underlying technique of attention, 
 [Zaremba & Sutskever, 2016]: http://arxiv.org/pdf/1505.00521.pdf
 
 <!-- Appendix -->
-<section class="appendix">
+<!-- <section class="appendix">
   <h3 id="citation">Errors, Reuse, and Citation</h3>
   <p>If you see mistakes or want to suggest changes, please open an issue or submit a pull request on <a href="https://github.com/TheAbhiKumar/TheAbhiKumar.github.io">github</a>.</p>
   <h3>References</h3>
@@ -288,4 +288,4 @@ Augmented recurrent neural networks, and the underlying technique of attention, 
     <li>Xu, K., Ba, J., Kiros, R., Cho, K., Courville, A., Salakhutdinov, R., Zemel, R.S. & Bengio, Y., 2015. (2015). Show, attend and tell: Neural image caption generation with visual attention. arXiv preprint arXiv:1502.03044, 2(3), 5.</li>
     <li>Zaremba, W., & Sutskever, I. (2015). Reinforcement learning neural Turing machines. arXiv preprint arXiv:1505.00521, 362.</li>
   </ul>
-</section>
+</section> -->

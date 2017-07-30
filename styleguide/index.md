@@ -1,153 +1,96 @@
 ---
 layout: postnew
-title: styleguide
+title: Style Guide
 in-nav: false
 weight: 4
 ---
 
-<div class="byline">
-  <div class="authors">
-    <a class="name" href="{{ page.link }}">{{ page.author }} [arXiv]</a>
-  </div>
-  <div class="tag">
-    <p>{{ page.url}}</p>
-  </div>
-</div>
 
-This page demonstrates in <span class="equation-mimic">O(n)</span> time the various visual styles that comprise the design of this site. Headings are set in PT Serif and body is set in Open Sans[^1]. Here is some code `std::iostream` inside a paragraph.
+This page exists to demonstrate the visual styles of the various elements that comprise the design of this site. Headings are set in PT Serif and body is set in Open Sans[^1]. 
 
 ## Heading Level Two
 
 Second level headings are used to split text into sections. First level headings are only used once per page, in the page or post title. [Hyperlinks](/styleguide) are underlined and coloured when hovered.
 
-- Bulleted lists look like this[^2].
+- Bulleted lists look like this.
 - Multi-leveled bulleted lists look like this:
     - This is an example of a second-level bullet
-- Another bullet.
-
-{% include image.html url="/assets/2014/05/2.jpg" caption="Picture 2" %}{: .center-image }
+- Lists tend not to be used very often on this site, but they exist nonetheless.
 
 ### Heading Level Three
-Third level headings are most often used to denote names rather than sections, so have a lower visual priority.
+
+Third level headings are most often used to denote names rather than sections, so have a lower visual priority. Headings should avoid containing or being themselves hyperlinks, but when this rule is broken, heading hyperlinks do not differ in style from the heading itself.
 
 1. This is a numbered list.
 2. Numbered lists can also have multiple levels:
 	1. This is a second-level numbered list item
 3. Numbered lists, like bulleted lists, are not used particularly often on this site.
 
-Images may take one of two forms; aligned (left), or centered (relative to the text column). Captions are encouraged, but not required.
+<!-- {% include image.html alt="" url="https://placeimg.com/1000/300/arch" caption="This is an example image caption." %} -->
+{% include image.html url="/assets/rnn.png" caption="This is an example image caption." %}
 
-Footnotes can also be used to source sites[^3].
+<!-- {% include image.html url="/assets/lstm.png" caption="This is an example image caption." %}{: .center-image } -->
+
+Images are centered and captions are encouraged, but not required. Images are currently used only sparingly, but must flow with the content. Captions should be readable, but not distract from the main article. Like images themselves, they are supplements.
+
+Horizontal rules should be used to separate content into sections, or draw a rule before adding editorial notes and footnotes.
 
 ***
 
-{% include image.html url="/assets/2014/05/1.jpg" caption="Picture 1" %}{: .center-image }
+## Styling
 
-Here is some _italicized text_ and some **bold text**.
-
-### Random Crap
-
-<!-- Comment on inputs/outputs in figure? -->
-{% include image.html url="/assets/ntm/rnn_basic_rnn.svg" %}
-
-The basic RNN design struggles with longer sequences, but a special variant -- ["long short-term memory" networks][olah2015lstm] -- can even work with these. Such models have been found to be very powerful, achieving remarkable results in many tasks including translation, voice recognition, and image captioning. As a result, recurrent neural networks have become very widespread in the last few years.
-
-<p>H<sub>2</sub>O</p>
-
-#### Heading Level Four
-
-As this has happened, we’ve seen a growing number of attempts to augment RNNs with new properties. Four directions stand out as particularly exciting:
-
-* [*Neural Turing Machines*](#neural-turing-machines) have external memory that they can read and write to.
-* [*Attentional Interfaces*](#attentional-interfaces) allow RNNs to focus on parts of their input.
-* [*Adaptive Computation Time*](#adaptive-computation-time) allows for varying amounts of computation per step.
-* [*Neural Programmers*](#neural-programmer) can call functions, building programs as they run.
-
-[olah2015lstm]: http://colah.github.io/posts/2015-08-Understanding-LSTMs/
-
-<ul id="archive">
-  <li>
-  <span class="post-date">
-  <time datetime="2016-09-01">01 Sep<span class="year"> 2016</span></time>
-  </span>
-  <div class="description">
-    <a href="#">Title of post</a>
-    <p class="excerpt">Description</p>
-  </div>
-  </li>
-</ul>
-
-<div class="byline">
-        <div class="author">
-          <a class="name" href="https://arxiv.org/abs/1511.04834">Neelakantan, et al., 2015 [arXiv]</a>
-        </div>
-        <div class="date">
-          <div class="month">January 22, 2016</div>
-        </div>
-      </div>
-      
-### Random crap ending
-
-## Language, Voice, and Persona
-
-{% highlight cpp %}
-template <typename T>
-var<T> activation<T>::hard_sigmoid(const var<T>& input) {
-  auto output = var<T>::zeros_like(input);
-  const T* input_data = input.cpu_data();
-  T* output_data = output.mutable_cpu_data();
-  for (int i = 0; i < output.count(); i++) {
-    output_data[i] = std::max(0.0, std::min(1.0, 0.2*input_data[i] + 0.5));
-  }
-  return output;
-}
-{% endhighlight %}
+All paragraphs are justified and text can be _italicized_ and **bolded**. Footnotes can also be used as references [^2]. Subscripts and superscripts can also be used H<sub>2</sub>O. Pseudo math is typeset with italicized Georgia to mimic equations like <span class="equation-mimic">O(n)</span> and <span class="equation-mimic">Q* (s,a) = max E[Σ γr | s, a, π]</span>. Short pieces of code have an inline style `import skynet as sn` inside a paragraph [^3].
 
 {% highlight python %}
-def sample(h, seed_ix, n):
-  """ 
-  sample a sequence of integers from the model 
-  h is memory state, seed_ix is seed letter for first time step
-  """
-  x = np.zeros((vocab_size, 1))
-  x[seed_ix] = 1
-  ixes = []
-  for t in xrange(n):
-    h = np.tanh(np.dot(Wxh, x) + np.dot(Whh, h) + bh)
-    y = np.dot(Why, h) + by
-    p = np.exp(y) / np.sum(np.exp(y))
-    ix = np.random.choice(range(vocab_size), p=p.ravel())
-    x = np.zeros((vocab_size, 1))
-    x[ix] = 1
-    ixes.append(ix)
-  return ixes
+# Actor critic model
+class Actor():
+
+  def __init__(self,  sess, action_space_bounds, exploration_policies, env_space_size, learning_rate=0.0001, tau=0.001):
+    self.sess = sess
+    self.learning_rate = learning_rate
+    self.action_space_bounds = action_space_bounds
+    self.action_space_size = len(action_space_bounds)
+    self.exploration_policies = exploration_policies
+    self.tau = tau
+    
+    self.state_ph = tf.placeholder(tf.float32, shape=(None, env_space_size))
+
+    self.infer = self.create_nn(self.state_ph)
+
+    # Target network code "repurposed" from Patrick Emani :^)
+    self.weights = [v for v in tf.trainable_variables() if 'actor' in v.op.name]
+    
+    self.target = self.create_nn(self.state_ph, name='actor_target')
+    self.target_weights = [v for v in tf.trainable_variables() if 'actor' in v.op.name][len(self.weights):]
+
+    self.update_target_weights = \
+    [self.target_weights[i].assign(tf.multiply(self.weights[i], self.tau) +
+                                              tf.multiply(self.target_weights[i], 1. - self.tau))
+                for i in range(len(self.target_weights))]
+  
+    self.action_derivs = tf.placeholder(tf.float32, shape=(None, self.action_space_size))
+    self.policy_gradient = tf.gradients(self.infer, self.weights, -self.action_derivs)
+    self.train = tf.train.AdamOptimizer(learning_rate).apply_gradients(zip(self.policy_gradient, self.weights))
 {% endhighlight %}
 
-The last words in any given paragraph or other block-level elements are (automatically separated by a non-breaking space to prevent widows.
+Inline code blocks can also be used for longer pieces of code.
 
-Here’s an example of all these dashes in use:
+> "Blockquotes are used to frame non-original and secondary quotes that run longer than a single line."
 
-> When grammar-checking, one must always remember one rule—do it often and do it well. However—and I say this with caution—this rule may be broken 3–5 times a year, in recognition of national holidays.
+The visual style guide of this site is outlined above. It would only be fair to create a writing style guide. These guidelines are just that—guidelines—and may be broken where appropriate. They are a mix of my upbringing, lessons learned from doing things the wrong way, and a few resources—notably [The Elements of Typographic Style][typograhic_style], [The Chicago Manual of Style][chicago_manual], and [The Elements of Style][elements_style]. Happy writing.
 
-There are two sides to every story.
+[typograhic_style]: https://amazon.com/gp/product/0881792128/
+[chicago_manual]: https://amazon.com/gp/product/0226104206/
+[elements_style]: https://amazon.com/gp/product/0143112724/
 
 <!-- Appendix -->
 [^1]: [PT Serif/Open Sans](https://fonts.google.com/specimen/PT+Serif)
-[^2]: *Italic* Footnotes
-[^3]: Vivamus [*sagittis lacus*](vel augue) laoreet rutrum faucibus dolor auctor.
+[^2]: Alemi, A. A., Chollet, F., Irving, G., Szegedy, C., & Urban, J. (2016). DeepMath-Deep Sequence Models for Premise Selection. arXiv preprint arXiv:1606.04442.
+[^3]: Andrychowicz, M., & Kurach, K. (2016). Learning Efficient Algorithms with Hierarchical Attentive Memory. arXiv preprint arXiv:1602.03218.
 
-## Footnotes
+***
+
+## Footnotes/References
 
 * footnotes will be placed here
 {:footnotes}
-
-<!-- Appendix -->
-<section class="appendix">
-  <h3>Errors, Reuse, and Citation</h3>
-  <p>If you see mistakes or want to suggest changes, please open an issue or submit a pull request on <a href="https://github.com/TheAbhiKumar/TheAbhiKumar.github.io">github</a>.</p>
-  <h3>References</h3>
-  <ul class="references">
-    <li>Alemi, A. A., Chollet, F., Irving, G., Szegedy, C., & Urban, J. (2016). DeepMath-Deep Sequence Models for Premise Selection. arXiv preprint arXiv:1606.04442.</li>
-    <li>Andrychowicz, M., & Kurach, K. (2016). Learning Efficient Algorithms with Hierarchical Attentive Memory. arXiv preprint arXiv:1602.03218.</li>
-  </ul>
-</section>
