@@ -1,14 +1,26 @@
-/*
-// 451/7981
-// 413/7420
-// 
-// 
-*/
-/* font: font-style font-variant font-weight font-size/line-height font-family;*/
+/* Fonts and defaults*/
+@font-face {
+  font-family: 'cheltenham';
+  src: url('cheltenham.woff2') format('woff2');
+  font-style: normal;
+}
 
-/* Reset.css 46/1042
-/* ----------------------------------------------------------*/
+@font-face {
+  font-family: 'tiempo';
+  src: url('tiempo.woff2') format('woff2');
+}
 
+:root {
+  --site-width: 768px;
+  --border-color: #d0d0d0;
+  --site-color: #fcfcfc;
+  --monospace: "Source Code Pro", "Roboto Mono", "Monaco", "Courier New", monospace;
+  --sans-serif: system-ui, "BlinkMacSystemFont", -apple-system, "Roboto", "Helvetica Neue", Helvetica, "Segoe UI", "Arial", sans-serif;
+  --serif: "tiempo", "Georgia", "Times New Roman", serif;
+  --header: "cheltenham", "Georgia", serif;
+}
+
+/* reset.css */
 * {
   margin: 0;
   padding: 0;
@@ -19,24 +31,18 @@
   position: relative;
 }
 
-html { box-sizing: border-box; }
-*, *:before, *:after { box-sizing: inherit; }
-
+html { box-sizing: border-box; font-size: 62.5%; }
+*, *:before, *:after { box-sizing: border-box; }
 /*html, body { height: 100%; }*/
-
 h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
-
 a         { color: #2F9EEF; text-decoration: none; }
 a:hover   { color: #2F9EEF; text-decoration: underline; }
-a:visited { color: #2F9EEF; }
-
+a:visited { color: #2F9EEF; text-decoration: none; }
 p { text-align: justify; }
 p:empty { display: none; }
-
 em { font-style: italic; }
 img { max-width: 100%; }
 li ol,li ul { margin-bottom: 0; }
-/*picture { display: block; }*/
 strong, b { font-weight: bold; }
 sub { vertical-align: sub; }
 /*sup { vertical-align: super; }*/
@@ -51,41 +57,20 @@ small, sub, sup {
   position: relative;
 }
 
-article {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 704px;
-}
-
-/* Fonts 23/404
-/* ------------------------------------------------------ */
-
-@font-face {
-  font-family: 'cheltenham';
-  src: url('nyt-cheltenham-medium.ttf');
-}
-
-/* Table of Contents
-/* ------------------------------------------------------ */
-
-
-/* Site Header 38/695
-/* ------------------------------------------------------ */
-
+/* site specific elements */
 body {
-  /*background-color: #fff;*/
-  background-color: #fcfcfc;
-  font: 400 16px/1.5 'Georgia', Helvetica, 'Droid Sans', Arial, sans-serif;
+  background-color: var(--site-color);
+  font: 400 1.6rem/1.5rem var(--serif);
   padding: 12px;
 }
 
-.site-header {
+.site-header, .page {
   margin: auto;
-  max-width: 704px; /*### IMP CHANGE Prev: 800*/
+  max-width: var(--site-width);
 }
 
 .site-nav {
-  border-bottom: 1px solid #d0d2d4;
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
@@ -96,9 +81,7 @@ body {
 .site-nav a:visited,
 .site-nav a:hover,
 .site-nav a:active {
-  /*letter-spacing: -0.4px;*/
-  font: 24px 'cheltenham';
-  /*font-weight: bold;*/
+  font: 2.4rem var(--header);
   text-align: center;
   color: #333;
 }
@@ -109,34 +92,16 @@ body {
 }
 
 /* Post styles */
-/* ----------------------------------------------------------*/
-
-/*.post-header { margin: 10px 0 30px; }*/
-
 .post-header h1 {
-  font-size: 36px;
+  font-size: 4.4rem;
   letter-spacing: -1.75px;
-  line-height: 1;
-  font-weight: 300;
   text-align: center;
 }
 
 .post-header .meta {
-  font-size: 15px;
   color: #818181;
-  margin-top: 5px;
   text-align: center;
 }
-
-.page {
-  padding-top: 8px;
-  padding-bottom: 24px;
-  overflow: hidden;
-}
-
-/*.page ul {
-  list-style-type: disc;
-}*/
 
 #pubs {
   list-style: outside;
@@ -146,128 +111,41 @@ body {
   margin: 8px 0;
 }
 
-.page h2 {
-  font-size: 32px;
+/* page element */
+
+.page {
+  font: 1.8rem/28px var(--sans-serif);
+  padding-top: 8px;
+  padding-bottom: 21px;
+  overflow: hidden;
 }
 
-.page h3 {
-  font-size: 26px;
+ul, ol, h1, h2, h3, figure, p, .site-nav {
+  margin-bottom: 21px;
 }
 
-.page blockquote {
-  border-left: 4px solid #e8e8e8;
-  padding-left: 20px;
-  font-size: 18px;
-  opacity: .6;
-  font-style: italic;
-  margin: 30px 0;
-}
-
-/* Footnotes 19/299
-/* ----------------------------------------------------------*/
-
-.footnote, .footnote:visited {
-  padding: .15em;
-  text-decoration: none;
-  /*font-size: 1.2em;*/
-}
-
-.footnote:hover, .footnote:visited:hover {
-  text-decoration: underline;
-}
-
-.footnote:before {
-   content: "[";
-}
-
-.footnote:after {
-   content: "]";
-}
-
-.footnotes {
-  /*font: .8rem/1.3125;*/
-  font-size: .8rem;
-  line-height: 1.3125;
-  color: #888;
-}
-
-.footnotes :last-child {
+li ol, li ul, .site-nav ul {
   margin-bottom: 0;
 }
 
-/* media queries */
-/* ----------------------------------------------------------*/
-
-@media (max-width: 816px) {
-  .site-title,
-  .site-title:hover,
-  .site-title:visited {
-    font-size: 18px;
-  }
-
-  .post-header h1 { font-size: 36px; }
-  .page h2 { font-size: 28px; }
-  .page h3 { font-size: 22px; }
-  .page blockquote { padding-left: 10px; }
-}
-
-.post-header > h1,
-.page > h1,
-.page > h2,
-.page > h3,
-.page > ul,
-.page > ol,
-.page > figure,
-.page > figure > figcaption,
-.page > pre,
-.page > p,
-.page > blockquote,
-.page > .footnotes {
-  /*margin-left: auto;
-  margin-right: auto;*/
-  /*width: 648px;*/
-  /*width: 704px; ### IMP CHANGE Prev: 800*/
-  box-sizing: border-box;
-}
-
-.page {
-  font: 18px/28px -apple-system, system-ui, BlinkMacSystemFont, "Roboto", sans-serif;
-}
-
-.page ul,
-.page ol,
-.page .footnotes, {
+.page ul, .page ol {
   color: rgba(0, 0, 0, 0.8);
-  font: 18px/28px -apple-system, system-ui, BlinkMacSystemFont, "Roboto", sans-serif;
+  font: 1.6rem/28px var(--serif);
 }
 
-.page h1 {
-  font: 400 50px/1.1em 'cheltenham', Georgia, serif;
-  margin-bottom: 15px;
-  -webkit-font-smoothing: antialiased;
+ul#pubs {
+  font-family: 1.6rem/28px var(--sans-serif);
 }
 
-.page h2 {
-  font: 500 30px/1.45em 'cheltenham', Georgia, serif;;
-  margin-bottom: 24px;
-  -webkit-font-smoothing: antialiased;
-}
-
-.page h3 {
-  font: italic 400 26px/1.4em 'cheltenham', serif;
-  margin-top: 36px;
-  margin-bottom: 18px;
-}
-
-.page p {
-  margin-bottom: 24px;
-  /*-webkit-hyphens: auto;*/
-  /*hyphens: auto;*/
-}
+.page h1, .page h2, .page h3 { -webkit-font-smoothing: antialiased; }
+.page h1 { font: 4.4rem var(--header); }
+.page h2 { font: 2.8rem var(--header); }
+.page h3 { font: italic 22px var(--header); }
+.page p  { font: 1.7rem/28px var(--serif); }
 
 .page hr {
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--border-color);
   margin: 40px 0;
   width: 200%;
   position: relative;
@@ -275,82 +153,42 @@ body {
 }
 
 .page span.equation-mimic {
-  font: italic 110% Georgia;
-}
-
-/* Note: changed form 648 to 800*/
-@media (max-width: 816px) {
-  .post-header h1 { font-size: 44px; }
-  .page h2 { font-size: 28px; }
-  .page h3 { font-size: 22px; }
-  .page blockquote { padding-left: 10px; }
-
-  .post-header > h1,
-  .page > h2,
-  .page > h3,
-  .page > ul,
-  .page > ol,
-  .page > figure,
-  .page > pre,
-  .page > p,
-  .page > blockquote,
-  .page > .footnotes {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    box-sizing: border-box;
-  }
+  font-style: italic;
 }
 
 .page blockquote {
-  border-left: 4px solid #e8e8e8;
-  /*padding-left: 20px;*/
-  font-size: 18px;
-  opacity: .6;
-  letter-spacing: -1px;
+  border-left: 4px solid #b4b4b4;
+  font-size: 1.8rem;
+  opacity: .7;
+  letter-spacing: -0.3px;
   font-style: italic;
-  /*margin: 30px 0;*/
   padding-left: 10px;
-  /*text-align: right;*/
 }
 
-/* Archive 17/259
-/* ------------------------------------------------------ */
+.page blockquote p {
+  font-style: italic;
+}
 
+/* Archive */
 ul#archive {
   list-style: none;
   padding-left: 0;
-}
-
-ul#archive li span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
 }
 
 ul#archive li {
   margin-bottom: 20px;
 }
 
+ul#archive li span.post-date {
+  color: #aaa;
+  font-family: var(--monospace);
+}
+
 ul#archive li a {
-  font: 24px 'cheltenham', Georgia, serif;
+  font: 2.0rem var(--header);
 }
 
-/* ????
-/* ------------------------------------------------------ */
-
-.page p a {
-  color: #2F9EEF;
-  text-decoration: none;
-}
-
-.page p a:hover {
-  color: #2F9EEF;
-  text-decoration: underline;
-}
-
-/* Figure/Figcaption 17/316
-/* ----------------------------------------------------------*/
-
+/* Figure/Figcaption */
 .figimg {
   margin: 48px auto;
   position: relative;
@@ -364,18 +202,12 @@ ul#archive li a {
 }
 
 .figimg figcaption {
-  font: 12px/18px -apple-system, system-ui, BlinkMacSystemFont, "Roboto", sans-serif;
+  font: 1.4rem/18px var(--sans-serif);
   color: rgb(146, 149, 152);
   /*text-align: center;*/
 }
 
-/* ???
-/* ----------------------------------------------------------*/
-
-.page p {
-  font-family: 'Georgia';
-  font-size: 20px;
-}
+/* Katex */
 
 .page .katex-display {
   /*max-width: 150%;*/
@@ -400,7 +232,126 @@ ul#archive li a {
   background: rgba(0,0,0,.26);
 }
 
+/* Footnotes */
+
+.footnote { padding: .15em; }
+.footnote:before { content: "["; }
+.footnote:after  { content: "]"; }
+
+.footnotes li,
 .footnotes p {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Roboto", sans-serif;
-  font-size: 14px;
+  color: #888;
+  font: 1.4rem/1.3125 var(--sans-serif);
+  text-align: left;
+}
+
+.footnotes :last-child {
+  margin-bottom: 0;
+}
+
+/* Syntax highlighter */
+
+code.highlighter-rouge {
+  background: #F3F3F3;
+  color: #37474f;
+  padding: 1px 4px;
+  font: 90%/1 var(--monospace);
+}
+
+pre, .highlight code {
+  font: 1.4rem/20px var(--monospace);
+}
+
+pre {
+  overflow-x: auto;
+  padding: 8px;
+}
+
+pre::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+pre::-webkit-scrollbar-corner {
+  background: 0;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, .26);
+}
+
+.highlight pre code { background-color: #F3F3F3 }
+.highlight pre { background-color: #F3F3F3 }
+.highlight .hll { background-color: #F3F3F3 }
+.highlight .c { color: #d81b60 } /* Comment */
+.highlight .err { color: #960050; background-color: #1e0010 } /* Error */
+.highlight .k { color: #3b78e7 } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #37474f } /* Name */
+.highlight .o { color: #37474f } /* Operator */
+.highlight .p { color: #37474f } /* Punctuation */
+.highlight .cm { color: #75715e } /* Comment.Multiline */
+.highlight .cp { color: #75715e } /* Comment.Preproc */
+.highlight .c1 { color: #75715e } /* Comment.Single */
+.highlight .cs { color: #75715e } /* Comment.Special */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #f92672 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #c53929 } /* Literal.Number */
+.highlight .s { color: #0d904f } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #37474f } /* Name.Builtin */
+.highlight .nc { color: #9c27b0 } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #37474f } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #37474f } /* Name.Function */
+.highlight .nl { color: #37474f } /* Name.Label */
+.highlight .nn { color: #37474f } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #37474f } /* Name.Property */
+.highlight .nt { color: #3b78e7 } /* Name.Tag */
+.highlight .nv { color: #37474f } /* Name.Variable */
+.highlight .ow { color: #3b78e7 } /* Operator.Word */
+.highlight .w { color: #37474f } /* Text.Whitespace */
+.highlight .mf { color: #c53929 } /* Literal.Number.Float */
+.highlight .mh { color: #c53929 } /* Literal.Number.Hex */
+.highlight .mi { color: #c53929 } /* Literal.Number.Integer */
+.highlight .mo { color: #c53929 } /* Literal.Number.Oct */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #c53929 } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #0d904f } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #3b78e7 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #37474f } /* Name.Variable.Class */
+.highlight .vg { color: #37474f } /* Name.Variable.Global */
+.highlight .vi { color: #37474f } /* Name.Variable.Instance */
+.highlight .il { color: #c53929 } /* Literal.Number.Integer.Long */
+.highlight .gh { } /* Generic Heading & Diff Header */
+.highlight .gu { color: #75715e } /* Generic.Subheading & Diff Unified/Comment? */
+.highlight .gd { color: #f92672 } /* Generic.Deleted & Diff Deleted */
+.highlight .gi { color: #a6e22e } /* Generic.Inserted & Diff Inserted */
+
+/* media queries */
+@media (min-width: 728px) {
+  .post-header h1 { font-size: 5.0rem; }
+  .page h2 { font-size: 3.0rem; }
+  .page h3 { font-size: 2.6rem; } 
+  .page p  { font-size: 1.8rem; }
+  .page ul, .page ol { font-size: 1.8rem; }
+  .page .footnotes p { font-size: 1.4rem; }
 }

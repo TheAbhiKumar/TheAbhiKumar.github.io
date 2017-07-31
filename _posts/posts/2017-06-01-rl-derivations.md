@@ -3,6 +3,7 @@ layout: postmath
 title: A List of Reinforcement Learning Derivations
 category: blog
 excerpt: A List of Reinforcement Learning Derivations
+hidden: true
 ---
 
 *Last updated May 24, 2017*

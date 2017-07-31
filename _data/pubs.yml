@@ -1,20 +1,16 @@
 - title: Combating Reinforcement Learning's Sisyphean Curse with Intrinsic Fear
   authors: Zachary C. Lipton, Abhishek Kumar, Lihong Li, Jianfeng Gao, Li Deng
   arxiv: 1611.01211
-  conf: NIPS 2017
-  blog: abkumar.me/ai-deadlines
-  code: https://github.com/zackchase
-  video: https://www.youtube.com/watch?v=Bvgr-a79hCQ
 
-- title: Variational Lossy Autoencoder
-  authors: Xi Chen, Diederik P. Kingma, Tim Salimans, Yan Duan, Prafulla Dhariwal, John Schulman, Ilya Sutskever, Pieter Abbeel
-  arxiv: 1611.02731
-  conf: ICLR 2018
-  blog: ruder.io/deep-learning-nlp-best-practices
-  video: https://gaming.youtube.com/watch?v=bspIzIVyQoI#profile-0
+# - title: Variational Lossy Autoencoder
+#   authors: Xi Chen, Diederik P. Kingma, Tim Salimans, Yan Duan, Prafulla Dhariwal, John Schulman, Ilya Sutskever, Pieter Abbeel
+#   arxiv: 1611.02731
+#   conf: ICLR 2018
+#   blog: ruder.io/deep-learning-nlp-best-practices
+#   video: https://gaming.youtube.com/watch?v=bspIzIVyQoI#profile-0
 
-- title: Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks
-  authors: Chelsea Finn, Pieter Abbeel, Sergey Levine 
-  arxiv: 1703.03400
-  conf: ICML 2018
-  code: https://github.com/cbfinn
+# - title: Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks
+#   authors: Chelsea Finn, Pieter Abbeel, Sergey Levine 
+#   arxiv: 1703.03400
+#   conf: ICML 2018
+#   code: https://github.com/cbfinn

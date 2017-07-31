@@ -11,7 +11,7 @@ I am an undergraduate student at UC San Diego studying computer science. My curr
 <!-- [CV][link_cv] &nbsp;/&nbsp; -->
 [Blog][link_blog] &nbsp;/&nbsp;
 [GitHub][link_github] &nbsp;/&nbsp;
-[Style Guide][link_styleguide] &nbsp;/&nbsp;
+<!-- [Style Guide][link_styleguide] &nbsp;/&nbsp; -->
 <!-- [Google Scholar][link_scholar] &nbsp;/&nbsp; -->
 abkumar at ucsd dot edu
 
@@ -30,7 +30,8 @@ abkumar at ucsd dot edu
     <br />
     {{ paper.authors }}
     <br />
-    {{ paper.conf }} / <a href="https://arxiv.org/abs/{{ paper.arxiv }}">ArXiv</a>
+    {% if paper.conf != defined %} {{ paper.conf }} <br /> {% endif %}
+    <a href="https://arxiv.org/abs/{{ paper.arxiv }}">ArXiv</a>
     {% if paper.code != defined %} / <a href="{{ paper.code }}">Code</a> {% endif %}
     {% if paper.blog != defined %} / <a href="{{ paper.blog }}">Blog</a> {% endif %}
     {% if paper.video != defined %} / <a href="{{ paper.video }}">Video</a> {% endif %}

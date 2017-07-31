@@ -2,7 +2,7 @@
 layout: postnew
 title: Attention and Augmented Recurrent Neural Networks
 category: blog
-hidden: false
+hidden: true
 excerpt: Recurrent neural networks are one of the staples of deep learning, allowing neural networks to work with sequences of data like text, audio and video. They can be used to boil a sequence down into a high-level understanding, to annotate sequences, and even to generate new sequences from scratch!
 ---
 

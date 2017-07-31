@@ -23,7 +23,7 @@ Third level headings are most often used to denote names rather than sections, s
 
 1. This is a numbered list.
 2. Numbered lists can also have multiple levels:
-	1. This is a second-level numbered list item
+  1. This is a second-level numbered list item
 3. Numbered lists, like bulleted lists, are not used particularly often on this site.
 
 <!-- {% include image.html alt="" url="https://placeimg.com/1000/300/arch" caption="This is an example image caption." %} -->
