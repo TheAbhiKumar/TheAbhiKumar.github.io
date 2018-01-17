@@ -15,7 +15,7 @@ I am an undergraduate student at UC San Diego studying computer science. My curr
 <!-- [Google Scholar][link_scholar] &nbsp;/&nbsp; -->
 abkumar at ucsd dot edu
 
-[link_cv]: https://abkumar.me/files/cv.pdf
+[link_cv]: cv/
 [link_blog]: blog/
 [link_styleguide]: styleguide/
 [link_github]: http://www.github.com/TheAbhiKumar/

@@ -43,34 +43,38 @@ All paragraphs are justified and text can be _italicized_ and **bolded**. Footno
 
 {% highlight python %}
 # Actor critic model
-class Actor():
+class Actor:
+    def __init__(self, sess, env, default_hparams):
+        self.sess = sess
+        self.env = env
+        self.ARGS = default_hparams
+        self.actor_lr = self.ARGS.actor_lr
+        self.tau = self.ARGS.tau
+        self.batch_size = self.ARGS.batch_size
 
-  def __init__(self,  sess, action_space_bounds, exploration_policies, env_space_size, learning_rate=0.0001, tau=0.001):
-    self.sess = sess
-    self.learning_rate = learning_rate
-    self.action_space_bounds = action_space_bounds
-    self.action_space_size = len(action_space_bounds)
-    self.exploration_policies = exploration_policies
-    self.tau = tau
-    
-    self.state_ph = tf.placeholder(tf.float32, shape=(None, env_space_size))
+        self.state_dim = env.observation_space.shape[0]
+        self.action_dim = env.action_space.shape[0]
+        self.action_bound = env.action_space.high
+        # Action space should be symmetric
+        assert (env.action_space.high == -env.action_space.low)
+        with tf.variable_scope(f'Actor'):
+            self.a, _, self.c = self.create_network()
+            self.ta, _, self.tc = self.create_network(scope='target')
 
-    self.infer = self.create_nn(self.state_ph)
+        self.normal_params = tf.trainable_variables(scope='Actor/normal_actor')
+        self.target_params = tf.trainable_variables(scope='Actor/target_actor')
 
-    # Target network code "repurposed" from Patrick Emani :^)
-    self.weights = [v for v in tf.trainable_variables() if 'actor' in v.op.name]
-    
-    self.target = self.create_nn(self.state_ph, name='actor_target')
-    self.target_weights = [v for v in tf.trainable_variables() if 'actor' in v.op.name][len(self.weights):]
+        self.update_target_net = [
+            self.target_params[i].assign(
+                tf.multiply(self.normal_params[i], self.tau) + \
+                tf.multiply(self.target_params[i], 1.0 - self.tau)
+            ) for i in range(len(self.target_params))
+        ]
 
-    self.update_target_weights = \
-    [self.target_weights[i].assign(tf.multiply(self.weights[i], self.tau) +
-                                              tf.multiply(self.target_weights[i], 1. - self.tau))
-                for i in range(len(self.target_weights))]
-  
-    self.action_derivs = tf.placeholder(tf.float32, shape=(None, self.action_space_size))
-    self.policy_gradient = tf.gradients(self.infer, self.weights, -self.action_derivs)
-    self.train = tf.train.AdamOptimizer(learning_rate).apply_gradients(zip(self.policy_gradient, self.weights))
+        self.sampled_gradient = tf.placeholder(tf.float32, shape=[None, self.action_dim], name='sampled_gradient')
+        self.unnormalized_actor_gradients = tf.gradients(self.c, self.normal_params, -self.sampled_gradient)
+        self.actor_gradients = list(map(lambda x: tf.div(x, self.batch_size), self.unnormalized_actor_gradients))
+        self.optimize = tf.train.AdamOptimizer(self.actor_lr).apply_gradients(zip(self.actor_gradients, self.normal_params))
 {% endhighlight %}
 
 Inline code blocks can also be used for longer pieces of code.
