@@ -13,7 +13,8 @@
 :root {
   --site-width: 768px;
   --border-color: #d0d0d0;
-  --site-color: #fcfcfc;
+  /*--site-color: #fcfcfc;*/
+  --site-color: #f9f9f9;
   --monospace: "Source Code Pro", "Roboto Mono", "Monaco", "Courier New", monospace;
   --sans-serif: system-ui, "BlinkMacSystemFont", -apple-system, "Roboto", "Helvetica Neue", Helvetica, "Segoe UI", "Arial", sans-serif;
   --serif: "tiempo", "Georgia", "Times New Roman", serif;
@@ -220,7 +221,7 @@ ul#archive li a {
 }
 
 .katex-display::-webkit-scrollbar {
-  height: 4px;
+  height: 10px;
   width: 4px;
 }
 
@@ -268,7 +269,7 @@ pre {
 }
 
 pre::-webkit-scrollbar {
-  height: 4px;
+  height: 10px;
   width: 4px;
 }
 

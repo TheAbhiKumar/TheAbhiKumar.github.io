@@ -1,0 +1,14 @@
+---
+layout: postnew
+title: archive
+in-nav: false
+weight: 1
+---
+  <ul id="archive">
+    {% for post in site.posts %}
+    <li>
+      <span class="post-date">{{ post.date | date: '%d %b %Y' }} &raquo;</span>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
