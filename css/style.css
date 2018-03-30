@@ -142,7 +142,7 @@ ul#pubs {
 .page h1 { font: 4.4rem var(--header); }
 .page h2 { font: 2.8rem var(--header); }
 .page h3 { font: italic 22px var(--header); }
-.page p  { font: 1.7rem/28px var(--serif); }
+.page p  { font: 1.6rem/26px var(--serif); }
 
 .page hr {
   border: none;
