@@ -1,5 +1,5 @@
 ---
-layout: postnew
+layout: post
 title: "404: Page Not Found"
 permalink: 404.html
 ---

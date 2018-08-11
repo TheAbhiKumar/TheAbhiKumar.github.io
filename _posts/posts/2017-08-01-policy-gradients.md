@@ -1,29 +1,28 @@
 ---
 layout: post
-title: A List of Reinforcement Learning Derivations
+title: Deriving the policy gradient
 category: blog
-excerpt: A List of Reinforcement Learning Derivations
+excerpt: Deriving the policy gradient
 hidden: true
 math: true
 ---
-
-*Last updated May 24, 2017*
-
-Place for me to store notes on reinforcement learning, with a
-focus on the details of the derivations.
-
-This is a draft, and will never be more than a draft.
-Intended as a reference for me, may not be legible to other people.
-Only posting publicly in case other people find it useful.
-
-TODO: Add paper links for where I first encountered these proofs,
-relevant papers, etc.
 
 ## Table of Contents
 
 * Clobbered for auto generated table of contents
 {:toc}
 
+Formally, let's define a class of parametrized policies:
+
+$$
+\prod = {\pi_{\theta} \in \mathbb{R}^{m}}
+$$
+
+For each policy, define its value:
+
+$$
+J(\theta) = \mathbb{E}\left[\sum_{t \geq 0} \gamma^{t}r_{t} | \pi_{\theta}\right]
+$$
 
 ### Log derivative trick
 

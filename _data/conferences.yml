@@ -1,0 +1,50 @@
+
+---
+
+- name: AAAI
+  year: 2019
+  id: aaai19
+  link: https://aaai.org/Conferences/AAAI-19/
+  deadline: "2018-09-05"
+  date: January 27 - February 1, 2019
+  place: Hilton Hawaiian Village, Honolulu, Hawaii, USA
+
+- name: IJCAI
+  year: 2018
+  id: ijcai18
+  link: https://www.ijcai-18.org/
+  deadline: "2018-01-31"
+  date: July 13-19, 2018
+  place: Stockholm, Sweden
+
+- name: ICML
+  year: 2018
+  id: icml18
+  link: https://icml.cc/Conferences/2018
+  deadline: TBA
+  date: July 10-15, 2018
+  place: Stockholm, Sweden
+
+- name: NIPS
+  year: 2018
+  id: nips18
+  link: https://nips.cc/Conferences/2018
+  deadline: "2018-05-18"
+  date: December 3-8, 2018
+  place: "Palais des Congr\xE8s de Montr\xE9al, Montr\xE9al, Canada"
+
+- name: EMNLP
+  year: 2018
+  id: emnlp18
+  link: http://emnlp2018.org
+  deadline: "2018-05-22"
+  date: November 2-4, 2018
+  place: Brussels, Belgium
+
+- name: CoRL
+  year: 2018
+  id: corl2018
+  link: http://www.robot-learning.org/
+  deadline: "2018-06-15"
+  date: October 29-31, 2018
+  place: Zurich, Switzerland

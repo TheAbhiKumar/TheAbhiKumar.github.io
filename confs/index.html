@@ -1,0 +1,76 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+    <title>Conference Deadlines</title>
+    
+    <meta name="author" content="Abhishek Kumar" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#777">
+    
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel='stylesheet' type='text/css' href="/css/style.css" />
+
+    <link rel="canonical" href="https://abkumar.me/confs/" />
+
+    <link rel="stylesheet" type="text/css" href="static/css/deadlines.css">
+    <!-- <link rel='stylesheet' type='text/css' href="/css/style.css" /> -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.countdown.min.js"></script>
+    <script src="static/js/moment.min.js"></script>
+
+  </head>
+  <body>
+    <article class="page">
+        <h1>{{ site.title }}</h1>
+        {% for conf in site.data.conferences %}
+        <div id="{{conf.id}}" class="{% for sub in conf.sub %} {{sub}}-conf {% endfor %}">
+          <div>
+              <div class="col-2">
+                  <a href="{{conf.link}}"><b>{{conf.name}} {{conf.year}}</b></a>
+                  <div class="meta">
+                    {{conf.date}} // <a href="http://maps.google.com/?q={{conf.place}}">{{conf.place}}</a>
+                  </div>
+              </div>
+              <div class="col-2">
+                <span class="timer"></span>
+                <div class="deadline">
+                  <div>Deadline:
+                    <span class="deadline-time"></span>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <hr>
+        </div>
+        {% endfor %}
+        <hr>
+    </article>
+    <script type="text/javascript" charset="utf-8">
+    $(function() {
+        {% for conf in site.data.conferences %}
+        {% if conf.deadline == "TBA" %}
+          $('#{{conf.id}} .timer').html("TBA");
+          $('#{{conf.id}} .deadline-time').html("TBA");
+        {% else %}
+          var confDate = moment("{{conf.deadline}}");
+
+          // render countdown timer
+          $('#{{conf.id}} .timer').countdown(confDate.toDate(), function(event) {
+            $(this).html(event.strftime('%D days'));
+          });
+          $('#{{conf.id}} .deadline-time').html(confDate.format("dddd, MMMM Do YYYY"));
+
+          // check if date has passed, add 'past' class to it
+          var today = moment();
+          if (today.diff(confDate) > 0)
+            $('#{{conf.id}}').addClass('past');
+        {% endif %}
+        {% endfor %}
+    });
+    </script>
+  </body>
+</html>

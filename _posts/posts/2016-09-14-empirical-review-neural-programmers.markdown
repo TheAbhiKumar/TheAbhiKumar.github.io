@@ -1,5 +1,5 @@
 ---
-layout: postnew
+layout: post
 title: Review of Neural Programmers
 category: blog
 excerpt: A short review of neural programmers and their ability to learn programs

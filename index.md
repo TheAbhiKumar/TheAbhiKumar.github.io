@@ -13,7 +13,7 @@ I am an undergraduate student at UC San Diego studying computer science. My curr
 [GitHub][link_github] &nbsp;/&nbsp;
 <!-- [Style Guide][link_styleguide] &nbsp;/&nbsp; -->
 <!-- [Google Scholar][link_scholar] &nbsp;/&nbsp; -->
-hello at abkumar dot me
+me at abkumar dot me
 
 [link_cv]: cv/
 [link_blog]: blog/

@@ -1,5 +1,5 @@
 ---
-layout: postnew
+layout: post
 title: So You Want To Learn Physics...
 in-nav: false
 weight: 1
