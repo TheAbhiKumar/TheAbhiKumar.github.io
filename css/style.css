@@ -16,7 +16,7 @@
   /*--site-color: #fcfcfc;*/
   --site-color: #f9f9f9;
   --monospace: "Source Code Pro", "Roboto Mono", "Monaco", "Courier New", monospace;
-  --sans-serif: system-ui, "BlinkMacSystemFont", -apple-system, "Roboto", "Helvetica Neue", Helvetica, "Segoe UI", "Arial", sans-serif;
+  --sans-serif: system-ui, "BlinkMacSystemFont", -apple-system, "Roboto", "Helvetica Neue", Helvetica, "Arial", sans-serif;
   --serif: "tiempo", "Georgia", "Times New Roman", serif;
   --header: "cheltenham", "Georgia", serif;
 }
@@ -279,6 +279,38 @@ pre::-webkit-scrollbar-corner {
 
 pre::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, .26);
+}
+
+/* deadlines */
+.conftitle {
+  font: 2rem var(--header);
+}
+
+.past {
+  opacity: 0.5;
+}
+
+.deadline, .meta {
+  font-size: 13px;
+}
+
+.timer {
+  font: 2rem;
+}
+
+.col-60 {
+  float: left;
+  width: 60%;
+}
+
+.col-40 {
+  float: left;
+  width: 40%;
+}
+
+.confclass {
+  clear:both;
+  display:block;
 }
 
 .highlight pre code { background-color: #F3F3F3 }

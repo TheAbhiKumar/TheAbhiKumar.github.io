@@ -25,3 +25,6 @@ abkumar.me
 - https://drafts.csswg.org/css-variables/
 - https://jekyllrb.com/docs/datafiles/
 - https://www.chrisanthropic.com/blog/2014/mail-forwarding-with-mailgun-and-cloudflare/
+
+# Blog Ideas
+- https://jaan.io/what-is-variational-autoencoder-vae-tutorial/
