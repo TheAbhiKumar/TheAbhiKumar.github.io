@@ -1,6 +1,16 @@
 name: "Abhishek Kumar"
 url: "https://abkumar.me"
 
+defaults:
+  - scope:
+      path: "_posts/posts"
+    values:
+      type: "posts"
+  - scope:
+      path: "_posts/notes"
+    values:
+      type: "notes"
+
 #gems:
 #- jekyll-sitemap
 destination: public

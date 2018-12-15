@@ -1,11 +1,11 @@
 ---
 layout: post
-title: blog
-in-nav: true
-weight: 1
+title: notes
+in-nav: false
+weight: 2
 ---
 
-  {% assign posts = site.posts | where:"type", "posts" %}
+  {% assign posts = site.posts | where:"type", "notes" %}
 
   <ul id="archive">
     {% for post in posts %}
