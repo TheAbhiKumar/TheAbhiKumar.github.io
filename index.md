@@ -12,8 +12,12 @@ header_title: Abhishek Kumar's homepage
     {% for post in posts %}
     {% if post.hidden != true %}
     <li>
-      <span class="post-date">{{ post.date | date: '%d %b %Y' }} &raquo;</span>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}">
+      <div class="post-list">
+        <div class="post-name">{{ post.title }}</div>
+        <div class="post-time">{{ post.date | date: '%Y.%m.%d' }}</div>
+      </div>
+      </a>
     </li>
     {% endif %}
     {% endfor %}
