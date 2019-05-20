@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <style>
+            /* reset.css */
+            * {
+                margin: 0;
+                padding: 0
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+                position: relative;
+            }
+            body {
+                background: #2b2b2b;
+                color: #fff;
+                font: normal 16px "Fira Code", monospace;
+                padding: 24px 48px;
+            }
+        </style>
+    </head>
+    <body id='comments' contenteditable="true"></body>
+    <script>
+        var comments = document.getElementById('comments');
+        window.onload = function() {
+            if (localStorage.comments) {
+                comments.innerHTML = localStorage.comments;
+            }
+        }
+        document.body.focus();
+        document.body.setAttribute('spellcheck', false)
+        comments.onkeyup = function() {
+            localStorage.setItem('comments', comments.innerHTML);
+        };
+    </script>
+</html>
