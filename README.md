@@ -10,3 +10,9 @@ abkumar.me
 # Blog Ideas
 - https://jaan.io/how-does-physics-connect-machine-learning/
 - https://jaan.io/what-is-variational-autoencoder-vae-tutorial/
+
+
+# emotionalpixels.com
+- https://dribbble.com/shots/11206150-Isolation-Reflection-01
+- https://dribbble.com/shots/11285944-Isolation-Reflection
+- https://dribbble.com/shots/11400388-Isolation-Reflection

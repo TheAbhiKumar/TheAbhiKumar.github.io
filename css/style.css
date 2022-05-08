@@ -113,10 +113,6 @@ hr {
   text-align: center;
 }
 
-#pubs {
-  list-style: outside;
-}
-
 #paper {
   margin: 8px 0;
 }
@@ -141,10 +137,6 @@ li ol, li ul, .site-nav ul {
 .page ul, .page ol {
   color: rgba(0, 0, 0, 0.8);
   font: 1.6rem/28px var(--serif);
-}
-
-ul#pubs {
-  font-family: 1.6rem/28px var(--sans-serif);
 }
 
 .page span.equation-mimic {
